@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Interactive question mapper for suggested Straddie night market locations and events.">
+    <title>Mapper | Straddie Night Market Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-mark" href="index.html" aria-label="Straddie Night Market Lab home"><span>Straddie</span><span>Night Market Lab</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="pattern.html">Pattern</a>
+          <a href="locations.html">Locations</a>
+          <a href="mapper.html" aria-current="page">Mapper</a>
+          <a href="shared-table.html">Shared Table</a>
+          <a href="transport.html">Transport</a>
+          <a href="noticeboard.html">Noticeboard</a>
+          <a href="future-network.html">Future Network</a>
+          <a href="research.html">Research</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="page-tools" aria-label="Page navigation">
+        <button class="back-button" type="button" data-back>Back</button>
+        <a href="index.html">Home</a>
+      </div>
+      <section class="section compact" aria-labelledby="mapper-title">
+        <div class="section-heading">
+          <p class="eyebrow">Question mapper</p>
+          <h1 id="mapper-title">Turn a venue idea into a clean question pack.</h1>
+          <p class="hero-lede">Choose a candidate, season and rough event shape. The output creates next questions and a draft `public_noticeboard.md` style snippet for a host-led or organiser-led setting.</p>
+        </div>
+
+        <div class="mapper-shell">
+          <form class="mapper-form" data-mapper-form>
+            <label>
+              Location or event
+              <span>Use the current candidate list as a starting point.</span>
+              <select name="location"></select>
+            </label>
+            <label>
+              Season window
+              <span>Transport, light and local tolerance change across the year.</span>
+              <select name="season"></select>
+            </label>
+            <label>
+              Strange But True role
+              <span>Keep Luke's role light unless a host asks for more.</span>
+              <select name="sbtRole">
+                <option value="guest stallholder">guest stallholder</option>
+                <option value="light projection contributor">light projection contributor</option>
+                <option value="question and data helper">question and data helper</option>
+                <option value="shared table support">shared table support</option>
+              </select>
+            </label>
+            <label>
+              Market shape
+              <span>Keep the first version small enough to learn from.</span>
+              <select name="marketShape">
+                <option value="single Strange But True stall">single Strange But True stall</option>
+                <option value="small maker row">small maker row</option>
+                <option value="music night add-on">music night add-on</option>
+                <option value="shared table and food layer">shared table and food layer</option>
+                <option value="distributed trail">distributed trail</option>
+              </select>
+            </label>
+            <label>
+              Projection status
+              <span>Light can be beautiful, annoying or unsafe depending on the space.</span>
+              <select name="projection">
+                <option value="unknown">unknown</option>
+                <option value="small temporary screen">small temporary screen</option>
+                <option value="indoor wall only">indoor wall only</option>
+                <option value="ambient low-light only">ambient low-light only</option>
+                <option value="unsuitable">unsuitable</option>
+              </select>
+            </label>
+            <label>
+              Transport signal
+              <span>Late movement matters on an island.</span>
+              <select name="transport">
+                <option value="late-risk">late-return risk</option>
+                <option value="ferry-adjacent">ferry-adjacent</option>
+                <option value="bus-linked">bus-linked</option>
+                <option value="local-only">local-only</option>
+                <option value="needs partner data">needs partner data</option>
+              </select>
+            </label>
+            <label>
+              Local consent
+              <span>Until this is started, everything remains question gathering.</span>
+              <select name="localConsent">
+                <option value="pending-contact">pending contact</option>
+                <option value="host-curious">host is curious</option>
+                <option value="stallholder-curious">stallholders are curious</option>
+                <option value="needs-cultural-check">needs cultural check</option>
+              </select>
+            </label>
+            <label>
+              Food stalls?
+              <span>Food can be central, but it adds compliance and safety questions.</span>
+              <select name="food">
+                <option value="pending">pending</option>
+                <option value="yes">yes, possible</option>
+              </select>
+            </label>
+          </form>
+
+          <div>
+            <section class="mapper-output" data-mapper-output aria-live="polite"></section>
+            <h3 style="margin-top: 1.5rem;">Draft public notice starter</h3>
+            <p class="page-copy">This is the kind of cautious file the Noticeboard Network could use after verification.</p>
+            <textarea id="notice-output" class="notice-output" data-notice-output readonly></textarea>
+            <button class="copy-button" type="button" data-copy-target="#notice-output">Copy notice draft</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-copy">
+        <p>The mapper keeps the first step light.</p>
+        <p class="footer-note">A draft notice is a starter for host review and verification.</p>
+      </div>
+    </footer>
+    <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
+    <script src="data/market-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Straddie Noticeboard Network bridge for night market data collection and distribution.">
+    <title>Noticeboard | Straddie Night Market Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-mark" href="index.html" aria-label="Straddie Night Market Lab home"><span>Straddie</span><span>Night Market Lab</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="pattern.html">Pattern</a>
+          <a href="locations.html">Locations</a>
+          <a href="mapper.html">Mapper</a>
+          <a href="shared-table.html">Shared Table</a>
+          <a href="transport.html">Transport</a>
+          <a href="noticeboard.html" aria-current="page">Noticeboard</a>
+          <a href="future-network.html">Future Network</a>
+          <a href="research.html">Research</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="page-tools" aria-label="Page navigation">
+        <button class="back-button" type="button" data-back>Back</button>
+        <a href="index.html">Home</a>
+      </div>
+      <section class="section compact split" aria-labelledby="notice-title">
+        <div class="section-heading">
+          <p class="eyebrow">Noticeboard bridge</p>
+          <h1 id="notice-title">Collect quietly, publish confirmed public details.</h1>
+          <p class="hero-lede">The Straddie Noticeboard Network can help gather questions, verify facts and distribute public-safe updates across screens, QR codes and simple markdown feeds.</p>
+          <div class="action-row">
+            <a class="button primary" href="https://auraofintelligence.github.io/straddie-noticeboard-network/" target="_blank" rel="noopener noreferrer">Open noticeboard repo site</a>
+            <a class="button secondary" href="mapper.html">Generate a draft notice</a>
+            <a class="button secondary" href="future-network.html">See AI and media flow</a>
+          </div>
+        </div>
+        <figure class="feature-image">
+          <img src="assets/noticeboard-device-pipeline.webp" alt="Noticeboard pipeline visual showing one markdown notice adapted to public screens, kiosks, tablets, phones and fallback devices." width="1200" height="900">
+        </figure>
+      </section>
+
+      <section class="section compact" aria-labelledby="notice-flow-title">
+        <div class="section-heading">
+          <p class="eyebrow">Public-safe workflow</p>
+          <h2 id="notice-flow-title">A night market notice works best with a verification date.</h2>
+          <p>This keeps the system useful during changing weather, ferry delays, venue changes or "we are still asking" phases.</p>
+        </div>
+        <div class="notice-demo">
+          <pre><code>---
+title: Possible night market test
+status: question gathering only
+location: Little Ship Club
+season_window: winter sunset
+sbt_role: guest stall or projection contributor
+public_boundary: host review required
+expires: 2026-06-30
+---
+
+Ask now:
+- Which twilight hours are realistic?
+- Can visitors return safely?
+- Is projection welcome or too much?
+- Who verifies the final public notice?</code></pre>
+          <div class="panel">
+            <p class="eyebrow">Why markdown</p>
+            <h3>Readable by people and agents.</h3>
+            <p>Luke can edit it. An agent team can validate it. A public screen can render it. If a fact changes, one simple file update can refresh the notice.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="notice-network-title">
+        <div class="section-heading">
+          <p class="eyebrow">Future-forward layer</p>
+          <h2 id="notice-network-title">One small notice can become planning data.</h2>
+          <p>QR answers, host updates, transport signals and stallholder questions can feed a larger loop: public notice, private planning note, simulation seed, media brief and later learning.</p>
+        </div>
+        <div class="grid three">
+          <article class="question-card">
+            <h3>Planning seed</h3>
+            <p>A venue idea becomes a small data packet: place, time, host, transport, projection, crowd comfort and open questions.</p>
+          </article>
+          <article class="question-card">
+            <h3>Simulation seed</h3>
+            <p>The same packet can later support flow modelling, ferry timing comparisons, weather scenarios and event-capacity assumptions.</p>
+          </article>
+          <article class="question-card">
+            <h3>News seed</h3>
+            <p>Confirmed public details can become a gig guide item, weekend wrap, ferry-screen update or post-event learning note.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="notice-questions-title">
+        <div class="section-heading">
+          <p class="eyebrow">Data collection</p>
+          <h2 id="notice-questions-title">Useful questions with a light touch.</h2>
+        </div>
+        <div class="grid three">
+          <article class="question-card">
+            <h3>Visitors</h3>
+            <ul>
+              <li>Are you local, day-tripping or staying overnight?</li>
+              <li>Which boat or transport mode are you likely to use?</li>
+              <li>What time would you realistically leave?</li>
+            </ul>
+          </article>
+          <article class="question-card">
+            <h3>Stallholders</h3>
+            <ul>
+              <li>What do you need: space, power, light, shade, table or online notice?</li>
+              <li>Are you food, craft, art, music, repair, tech help or community info?</li>
+              <li>Which seasons are worth your time?</li>
+            </ul>
+          </article>
+          <article class="question-card">
+            <h3>Hosts</h3>
+            <ul>
+              <li>What is the safe capacity?</li>
+              <li>Which details need host approval before advertising?</li>
+              <li>Who can update a cancellation or change notice quickly?</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-copy">
+        <p>Public notices are only as good as their verification.</p>
+        <p class="footer-note">The noticeboard bridge protects privacy, expiry dates and source checks.</p>
+      </div>
+    </footer>
+    <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
+    <script src="data/market-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

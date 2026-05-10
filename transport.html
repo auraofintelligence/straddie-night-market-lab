@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Transport and visitor-flow question map for Straddie night market concepts.">
+    <title>Transport | Straddie Night Market Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-mark" href="index.html" aria-label="Straddie Night Market Lab home"><span>Straddie</span><span>Night Market Lab</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="pattern.html">Pattern</a>
+          <a href="locations.html">Locations</a>
+          <a href="mapper.html">Mapper</a>
+          <a href="shared-table.html">Shared Table</a>
+          <a href="transport.html" aria-current="page">Transport</a>
+          <a href="noticeboard.html">Noticeboard</a>
+          <a href="future-network.html">Future Network</a>
+          <a href="research.html">Research</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="page-tools" aria-label="Page navigation">
+        <button class="back-button" type="button" data-back>Back</button>
+        <a href="index.html">Home</a>
+      </div>
+      <section class="section compact split" aria-labelledby="transport-title">
+        <div class="section-heading">
+          <p class="eyebrow">Visitor flow</p>
+          <h1 id="transport-title">Boat choices are part of the event design.</h1>
+          <p class="hero-lede">The useful partnership ask is simple: can SeaLink, Gold Cats / Stradbroke Flyer, buses and venues help map visitor flow so people choose the least stressful boat, bus, walking route and return window?</p>
+        </div>
+        <figure class="feature-image">
+          <img src="assets/strange-but-true-banner.webp" alt="Strange But True dark banner visual used as the style signal for transport and event mapping." width="1200" height="628">
+        </figure>
+      </section>
+
+      <section class="section compact" aria-labelledby="flow-title">
+        <div class="section-heading">
+          <p class="eyebrow">Simple flow</p>
+          <h2 id="flow-title">The map starts before the market.</h2>
+        </div>
+        <div class="transport-map">
+          <article class="transport-node">
+            <h3>Cleveland</h3>
+            <p>Visitors choose SeaLink, Gold Cats / Stradbroke Flyer, vehicle ferry, train connection, shuttle or private car.</p>
+          </article>
+          <div class="path-arrow">Ask: which boat fits the event?</div>
+          <article class="transport-node">
+            <h3>Dunwich</h3>
+            <p>Arrival point affects buses, walking, courtesy vehicles, car movement, first notices and last return.</p>
+          </article>
+          <div class="path-arrow">Ask: where do people go next?</div>
+          <article class="transport-node">
+            <h3>Venue</h3>
+            <p>Point Lookout, Amity or Dunwich each need different parking, bus, taxi, pack-down and local-neighbour questions.</p>
+          </article>
+          <div class="path-arrow">Ask: how do they leave well?</div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="partner-questions-title">
+        <div class="section-heading">
+          <p class="eyebrow">Partnership questions</p>
+          <h2 id="partner-questions-title">What to ask SeaLink and Gold Cats.</h2>
+          <p>The aim is aggregate planning information, better public guidance and lighter pressure on venues.</p>
+        </div>
+        <div class="grid three">
+          <article class="question-card">
+            <h3>Before the event</h3>
+            <ul>
+              <li>Which ferry windows are usually full during the target season?</li>
+              <li>Which arrivals connect cleanly with buses to Point Lookout or Amity?</li>
+              <li>Can a QR question help visitors choose day trip, overnight or local-only paths?</li>
+            </ul>
+          </article>
+          <article class="question-card">
+            <h3>During the event</h3>
+            <ul>
+              <li>Can public notices suggest lower-pressure boat choices?</li>
+              <li>Can venue signs show last-return and bus reminders?</li>
+              <li>Can ferry terminals display only verified, non-hype market information?</li>
+            </ul>
+          </article>
+          <article class="question-card">
+            <h3>After the event</h3>
+            <ul>
+              <li>What did visitors actually choose?</li>
+              <li>Where did flow feel too tight, late or confusing?</li>
+              <li>Which next market window would reduce pressure and support the host?</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-copy">
+        <p>Transport planning should reduce pressure and support host-led events.</p>
+        <p class="footer-note">Current timetables must be checked directly with operators before publication.</p>
+      </div>
+    </footer>
+    <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
+    <script src="data/market-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
