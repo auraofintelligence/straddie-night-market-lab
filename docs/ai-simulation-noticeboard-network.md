@@ -1,8 +1,8 @@
-# AI, Simulation and Noticeboard Network
+﻿# AI, Simulation and Noticeboard Network
 
-This note integrates the extra source files into the Straddie Night Market Lab.
+This note integrates the extra source files into the Straddie Market Onboarding.
 
-The near-term job stays simple: Luke / Strange But True can show up as a guest stallholder, light-projection contributor or question/data helper. The wider market pattern remains host-led or organiser-led.
+The near-term job stays simple: help people onboard into useful roles while the wider market pattern remains host-led or organiser-led.
 
 ## Source Dossiers
 
@@ -24,7 +24,7 @@ The site can treat every suggested night-market idea as a small data packet:
 - host or organiser
 - season window
 - public status
-- Strange But True role
+- contributor role
 - market shape
 - projection fit
 - transport fit
@@ -70,7 +70,7 @@ The Ready S.E.T. path adds a practical rhythm:
 5. Reformat for phones, websites, newsletters, social feeds, venue screens and accessibility needs.
 6. Close the loop into grant evidence, paid pathways, supporter records and public recognition.
 
-For the night market lab, that means a stall chat can become:
+For the market onboarding process, that means a stall chat can become:
 
 - a short public notice
 - a weekly local post
@@ -102,7 +102,7 @@ status: question gathering only
 host_review: pending
 location: Straddie Hotel
 season_window: winter whale season
-sbt_role: projection contributor
+contributor_role: projection contributor
 market_shape: host-led music night add-on
 projection_status: needs site walk
 transport_status: last-return check needed
@@ -131,3 +131,4 @@ notices/
 ```
 
 Each file can be read by a human, checked by an agent, rendered by the noticeboard, and later summarised into a news-network or simulation brief.
+

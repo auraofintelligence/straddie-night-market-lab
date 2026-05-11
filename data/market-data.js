@@ -1,4 +1,4 @@
-window.MARKET_DATA = {
+﻿window.MARKET_DATA = {
   locations: [
     {
       id: "point-lookout-bowls",
@@ -24,7 +24,7 @@ window.MARKET_DATA = {
       name: "Little Ship Club",
       village: "Dunwich",
       currentSignal: "Waterfront club at One Mile with bistro, social events and live music listings. Some published hours finish before full night-time, especially outside holiday periods.",
-      conceptUse: "Treat as a sunset-to-early-evening host-led test. Its ferry-adjacent location could suit a small light-projection and guest-stall trial if the club wants it.",
+      conceptUse: "Treat as a sunset-to-early-evening host-led test. Its ferry-adjacent location could suit a small light-projection and community-stall trial if the club wants it.",
       bestWindows: ["Easter holidays", "Winter sunset sessions", "Summer early evenings"],
       projectionFit: "Strong sunset atmosphere, but needs strict checks on closing time, waterfront glare, wind, power and marine safety.",
       transportFit: "Close to Stradbroke Flyer One Mile Jetty, useful for arrival/departure mapping.",
@@ -300,3 +300,4 @@ window.MARKET_DATA = {
     ]
   }
 };
+

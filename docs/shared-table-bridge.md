@@ -1,6 +1,6 @@
-# Shared Table Bridge
+﻿# Shared Table Bridge
 
-The Shared Table is associated infrastructure for the night market lab.
+The Shared Table is associated infrastructure for the market onboarding process.
 
 It should be treated as a small, permissioned layer that can travel with a market candidate when food, surplus, prep space, local growers, shared meals or community evidence are relevant.
 
@@ -50,3 +50,4 @@ Public feeds should exclude:
 - Unverified food-safety claims.
 - Venue approval still waiting on host review.
 - Wording that pressures a host into a public commitment.
+

@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en-AU">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Interactive question mapper for suggested Straddie night market locations and events.">
-    <title>Mapper | Straddie Night Market Lab</title>
+    <title>Mapper | Straddie Market Onboarding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
-        <a class="brand-mark" href="index.html" aria-label="Straddie Night Market Lab home"><span>Straddie</span><span>Night Market Lab</span></a>
+        <a class="brand-mark" href="index.html" aria-label="Straddie Market Onboarding home"><span>Straddie</span><span>Market Onboarding</span></a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
@@ -54,20 +54,22 @@
               <select name="season"></select>
             </label>
             <label>
-              Strange But True role
-              <span>Keep Luke's role light unless a host asks for more.</span>
-              <select name="sbtRole">
-                <option value="guest stallholder">guest stallholder</option>
+              Contributor role
+              <span>Pick the role being explored for this location or event.</span>
+              <select name="contributorRole">
+                <option value="host or organiser">host or organiser</option>
+                <option value="stallholder or maker">stallholder or maker</option>
                 <option value="light projection contributor">light projection contributor</option>
                 <option value="question and data helper">question and data helper</option>
                 <option value="shared table support">shared table support</option>
+                <option value="media or noticeboard helper">media or noticeboard helper</option>
               </select>
             </label>
             <label>
               Market shape
               <span>Keep the first version small enough to learn from.</span>
               <select name="marketShape">
-                <option value="single Strange But True stall">single Strange But True stall</option>
+                <option value="single community stall">single community stall</option>
                 <option value="small maker row">small maker row</option>
                 <option value="music night add-on">music night add-on</option>
                 <option value="shared table and food layer">shared table and food layer</option>
@@ -137,3 +139,4 @@
     <script src="app.js"></script>
   </body>
 </html>
+

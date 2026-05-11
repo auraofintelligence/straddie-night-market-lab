@@ -1,8 +1,8 @@
-# Straddie Night Market Lab
+﻿# Straddie Market Onboarding
 
-A dark-mode Strange But True style static repo for exploring a Straddie night market pattern.
+A dark-mode Strange But True style static repo for community market onboarding on Straddie.
 
-The site asks the questions needed to test whether a guest stall, light projection, food/craft layer or market add-on could fit a host-led location, season or existing event.
+The site asks the questions needed to help hosts, stallholders, artists, visitors, transport partners and noticeboard helpers participate in a host-led location, season or existing event.
 
 ## Open Locally
 
@@ -20,7 +20,7 @@ http://localhost:4196
 
 ## Pages
 
-- `index.html` - concept doorway and quick location signals.
+- `index.html` - community doorway and role-based onboarding.
 - `locations.html` - candidate locations and seasonal fit.
 - `mapper.html` - interactive question mapper for any new venue or event.
 - `shared-table.html` - Shared Table and Sovereign Space Builder bridge.
@@ -31,7 +31,7 @@ http://localhost:4196
 
 ## Why This Exists
 
-The working idea is a customisable pattern:
+The working idea is a customisable participation pattern:
 
 1. Start with a suggested location or event.
 2. Ask the right questions before making claims.
@@ -41,7 +41,7 @@ The working idea is a customisable pattern:
 6. Use the Straddie Noticeboard Network to collect, verify and distribute public-safe information.
 7. Keep AI and simulation work as planning support: question packs, assumptions, scenario seeds and news-network routing.
 
-Luke's default role is guest stallholder, light-projection contributor or question/data helper. Host organisations and existing organisers set the frame.
+Host organisations and existing organisers set the frame. Contributors can then join as stallholders, artists, projection helpers, Shared Table helpers, media helpers, data helpers or visitors.
 
 ## Source Notes
 
@@ -53,3 +53,4 @@ The site draws on:
 
 See `docs/research-notes.md` for the detailed scan.
 See `docs/ai-simulation-noticeboard-network.md` for the AI and simulation integration note.
+

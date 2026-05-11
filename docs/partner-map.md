@@ -1,4 +1,4 @@
-# Partner Map
+﻿# Partner Map
 
 This is a starter map for conversations. Partner status begins at contact planning and moves forward through direct review.
 
@@ -40,3 +40,4 @@ Can we map what already happens and what each partner would need before a tiny p
 - Ask which details need verification before public noticeboard use.
 - Search the Grants Lab entities list before outreach.
 - Route confirmed public stories through Ready S.E.T. Media when useful.
+

@@ -1,6 +1,6 @@
-# Question Pattern
+﻿# Question Pattern
 
-The night market lab should create better questions before it creates public claims.
+The market onboarding process should create better questions before it creates public claims.
 
 ## First Question
 
@@ -17,7 +17,7 @@ Could a market layer help this place or event, or would it add noise?
 
 ## Market Layer
 
-- Is this one Strange But True stall, a maker row, a food layer, a projection corner or a distributed trail?
+- Is this one community stall, a maker row, a food layer, a projection corner or a distributed trail?
 - Who books stalls?
 - What data does the organiser already collect?
 - What do stallholders need: space, table, shade, power, lighting, storage, water, public notice, payment options?
@@ -54,3 +54,4 @@ Could a market layer help this place or event, or would it add noise?
 - Who can update cancellations, venue changes or weather notes?
 - When does the notice expire?
 - Which QR question would create the most useful next piece of data?
+

@@ -1,4 +1,4 @@
-const marketData = window.MARKET_DATA || { locations: [], seasons: [], sourceLinks: {}, universalQuestions: {} };
+﻿const marketData = window.MARKET_DATA || { locations: [], seasons: [], sourceLinks: {}, universalQuestions: {} };
 
 const toggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector("#nav-links");
@@ -184,7 +184,7 @@ function initMapper() {
         <p>${season.name}: ${season.note}</p>
       </div>
       <div class="mini-grid">
-        <div><strong>SBT role</strong><span>${values.sbtRole}</span></div>
+        <div><strong>Contributor role</strong><span>${values.contributorRole}</span></div>
         <div><strong>Market shape</strong><span>${values.marketShape}</span></div>
         <div><strong>Projection status</strong><span>${values.projection}</span></div>
         <div><strong>Transport signal</strong><span>${values.transport}</span></div>
@@ -206,7 +206,7 @@ status: question gathering only
 location: ${location.name}
 village: ${location.village}
 season_window: ${season.name}
-sbt_role: ${values.sbtRole}
+contributor_role: ${values.contributorRole}
 market_shape: ${values.marketShape}
 projection_status: ${values.projection}
 transport_status: ${values.transport}
@@ -218,7 +218,7 @@ news_network_fit: possible gig guide, weekend wrap or ferry-screen update after 
 
 ## Public draft
 
-A possible Straddie night market or twilight stall pattern is being mapped for ${location.name}. Strange But True's draft role is ${values.sbtRole}. The current task is to ask good questions about venue fit, transport, projection, stallholder interest, Shared Table fit, local benefit and cultural care.
+A possible Straddie night market or twilight stall pattern is being mapped for ${location.name}. The draft contributor role is ${values.contributorRole}. The current task is to ask good questions about venue fit, transport, projection, stallholder interest, Shared Table fit, local benefit and cultural care.
 
 ## Questions open now
 
@@ -270,3 +270,4 @@ renderSeasonGrid();
 initFilters();
 initMapper();
 initCopyButtons();
+

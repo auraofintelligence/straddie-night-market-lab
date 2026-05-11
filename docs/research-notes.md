@@ -1,8 +1,8 @@
-# Research Notes
+﻿# Research Notes
 
 Last refreshed: 11 May 2026.
 
-This is a quick scan for a question-led Straddie night market concept. It supports contact planning, host review and current schedule checks.
+This is a quick scan for question-led Straddie market onboarding. It supports contact planning, host review and current schedule checks.
 
 ## Market Signals
 
@@ -31,7 +31,7 @@ This is a quick scan for a question-led Straddie night market concept. It suppor
 
 ## Local Documents Used
 
-Local files from `C:\Users\lukec\Downloads` shaped the concept:
+Local files from the source folders shaped the participation pathway:
 
 - `Shared Table Initiative.md`
 - `Island Resilient Community Priorities.md`
@@ -43,8 +43,8 @@ Local files from `C:\Users\lukec\Downloads` shaped the concept:
 
 The recurring useful ideas were:
 
-- Strange But True market stall as a friendly public anchor.
-- Light projection and outdoor cinema as part of Luke's service stack.
+- Market stalls as friendly public anchors.
+- Light projection and outdoor cinema as possible contributor roles.
 - Shared Table as gather, check, share and evidence.
 - Digital Welcome Pack and noticeboard screens as public-safe distribution.
 - Ferry terminals, transport choices and Dunwich gateway data as core to visitor management.
@@ -69,3 +69,4 @@ The recurring useful ideas were:
 - Events on Straddie: https://stradbrokeisland.com/events/whats-on/
 - Shared Table Initiative: https://auraofintelligence.github.io/shared-table-initiative/
 - Sovereign Space Builder bridge: https://auraofintelligence.github.io/shared-table-initiative/sovereign-space-builder.html
+
