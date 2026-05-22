@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-AU">
   <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260522-nav">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -18,10 +18,7 @@
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
-          <a href="pattern.html">Pattern</a>
-          <a href="locations.html">Locations</a>
-          <a href="mapper.html">Mapper</a>
-          <a href="shared-table.html">Shared Table</a>
+          <a href="mapper.html">Onboarding</a>
           <a href="transport.html">Transport</a>
           <a href="noticeboard.html" aria-current="page">Noticeboard</a>
           <a href="future-network.html">Future Network</a>
@@ -40,8 +37,8 @@
           <h1 id="notice-title">Collect quietly, publish confirmed public details.</h1>
           <p class="hero-lede">The Straddie Noticeboard Network can help gather questions, verify facts and distribute public-safe updates across screens, QR codes and simple markdown feeds.</p>
           <div class="action-row">
-            <a class="button primary" href="https://auraofintelligence.github.io/straddie-noticeboard-network/" target="_blank" rel="noopener noreferrer">Open noticeboard repo site</a>
-            <a class="button secondary" href="mapper.html">Generate a draft notice</a>
+            <a class="button primary" href="https://auraofintelligence.github.io/straddie-noticeboard-network/" target="_blank" rel="noopener noreferrer">Open noticeboard network</a>
+            <a class="button secondary" href="mapper.html">Open onboarding form</a>
             <a class="button secondary" href="future-network.html">See AI and media flow</a>
           </div>
         </div>
@@ -54,12 +51,13 @@
         <div class="section-heading">
           <p class="eyebrow">Public-safe workflow</p>
           <h2 id="notice-flow-title">A night market notice works best with a verification date.</h2>
-          <p>This keeps the system useful during changing weather, ferry delays, venue changes or "we are still asking" phases.</p>
+          <p>This keeps the system useful during changing weather, ferry delays, venue changes or details still being confirmed.</p>
         </div>
         <div class="notice-demo">
           <pre><code>---
 title: Possible night market test
-status: question gathering only
+status: draft
+next_step: host confirmation
 location: Little Ship Club
 season_window: winter sunset
 contributor_role: stallholder or projection contributor
@@ -67,15 +65,15 @@ public_boundary: host review required
 expires: 2026-06-30
 ---
 
-Ask now:
-- Which twilight hours are realistic?
-- Can visitors return safely?
-- Is projection welcome or too much?
-- Who verifies the final public notice?</code></pre>
+Confirm before publishing:
+- What date, time, setup and pack-down window is confirmed?
+- Which transport and last-return details should visitors see?
+- Which stallholder categories or needs are approved?
+- Who updates cancellation or weather notices?</code></pre>
           <div class="panel">
-            <p class="eyebrow">Why markdown</p>
-            <h3>Readable by people and agents.</h3>
-            <p>A person can edit it. An agent team can validate it. A public screen can render it. If a fact changes, one simple file update can refresh the notice.</p>
+            <p class="eyebrow">Why this draft exists</p>
+            <h3>One notice, fewer mixed messages.</h3>
+            <p>The draft keeps unconfirmed details out of public promotion. Once the host confirms time, transport and contact details, the same notice can be used on screens, phones and venue updates.</p>
           </div>
         </div>
       </section>
@@ -84,7 +82,7 @@ Ask now:
         <div class="section-heading">
           <p class="eyebrow">Future-forward layer</p>
           <h2 id="notice-network-title">One small notice can become planning data.</h2>
-          <p>QR answers, host updates, transport signals and stallholder questions can feed a larger loop: public notice, private planning note, simulation seed, media brief and later learning.</p>
+          <p>QR answers, host updates, transport details and stallholder questions can feed a larger loop: public notice, private planning note, media brief and later learning.</p>
         </div>
         <div class="grid three">
           <article class="question-card">
@@ -112,28 +110,39 @@ Ask now:
             <h3>Visitors</h3>
             <ul>
               <li>Are you local, day-tripping or staying overnight?</li>
-              <li>Which boat or transport mode are you likely to use?</li>
-              <li>What time would you realistically leave?</li>
+              <li>Which ferry, bus, car, walk or courtesy option will you use?</li>
+              <li>What arrival and departure window suits you?</li>
             </ul>
           </article>
           <article class="question-card">
             <h3>Stallholders</h3>
             <ul>
-              <li>What do you need: space, power, light, shade, table or online notice?</li>
-              <li>Are you food, craft, art, music, repair, tech help or community info?</li>
-              <li>Which seasons are worth your time?</li>
+              <li>What do you sell, share, demonstrate or provide?</li>
+              <li>What do you need: stall size, power, light, table, shelter, water or storage?</li>
+              <li>Which dates and times can you attend?</li>
             </ul>
           </article>
           <article class="question-card">
             <h3>Hosts</h3>
             <ul>
-              <li>What is the safe capacity?</li>
-              <li>Which details need host approval before advertising?</li>
-              <li>Who can update a cancellation or change notice quickly?</li>
+              <li>Which spaces and times are approved for public notice?</li>
+              <li>What capacity, toilet, access and wet-weather limits apply?</li>
+              <li>Who updates cancellation, weather or transport changes?</li>
             </ul>
           </article>
         </div>
       </section>
+
+      <nav class="sequence-nav" aria-label="Previous and next pages">
+        <a class="sequence-link previous" href="transport.html">
+          <span class="sequence-kicker">Previous</span>
+          <span>Transport</span>
+        </a>
+        <a class="sequence-link next" href="future-network.html">
+          <span class="sequence-kicker">Next</span>
+          <span>Future Network</span>
+        </a>
+      </nav>
     </main>
     <footer class="site-footer">
       <div class="footer-copy">
@@ -142,7 +151,7 @@ Ask now:
       </div>
     </footer>
     <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
-    <script src="data/market-data.js"></script>
+    <script src="data/market-data.js?v=20260522-events"></script>
     <script src="app.js"></script>
   </body>
 </html>

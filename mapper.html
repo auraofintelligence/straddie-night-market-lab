@@ -1,14 +1,14 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-AU">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Interactive question mapper for suggested Straddie night market locations and events.">
-    <title>Mapper | Straddie Market Onboarding</title>
+    <meta name="description" content="Straddie market onboarding form for stallholders, artists, food providers, venues, organisers and local market ideas.">
+    <title>Market Onboarding | Straddie Market Onboarding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260522-nav">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -18,10 +18,7 @@
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
-          <a href="pattern.html">Pattern</a>
-          <a href="locations.html">Locations</a>
-          <a href="mapper.html" aria-current="page">Mapper</a>
-          <a href="shared-table.html">Shared Table</a>
+          <a href="mapper.html" aria-current="page">Onboarding</a>
           <a href="transport.html">Transport</a>
           <a href="noticeboard.html">Noticeboard</a>
           <a href="future-network.html">Future Network</a>
@@ -36,107 +33,267 @@
       </div>
       <section class="section compact" aria-labelledby="mapper-title">
         <div class="section-heading">
-          <p class="eyebrow">Question mapper</p>
-          <h1 id="mapper-title">Turn a venue idea into a clean question pack.</h1>
-          <p class="hero-lede">Choose a candidate, season and rough event shape. The output creates next questions and a draft `public_noticeboard.md` style snippet for a host-led or organiser-led setting.</p>
+          <p class="eyebrow">Market onboarding</p>
+          <h1 id="mapper-title">Apply, offer a stall, or suggest a local market idea.</h1>
+          <p class="hero-lede">A simple intake for artists, makers, food providers, venues, organisers and helpers. It collects the details market organisers usually need before they can say yes.</p>
         </div>
 
         <div class="mapper-shell">
-          <form class="mapper-form" data-mapper-form>
-            <label>
-              Location or event
-              <span>Use the current candidate list as a starting point.</span>
-              <select name="location"></select>
-            </label>
-            <label>
-              Season window
-              <span>Transport, light and local tolerance change across the year.</span>
-              <select name="season"></select>
-            </label>
-            <label>
-              Contributor role
-              <span>Pick the role being explored for this location or event.</span>
-              <select name="contributorRole">
-                <option value="host or organiser">host or organiser</option>
-                <option value="stallholder or maker">stallholder or maker</option>
-                <option value="light projection contributor">light projection contributor</option>
-                <option value="question and data helper">question and data helper</option>
-                <option value="shared table support">shared table support</option>
-                <option value="media or noticeboard helper">media or noticeboard helper</option>
-              </select>
-            </label>
-            <label>
-              Market shape
-              <span>Keep the first version small enough to learn from.</span>
-              <select name="marketShape">
-                <option value="single community stall">single community stall</option>
-                <option value="small maker row">small maker row</option>
-                <option value="music night add-on">music night add-on</option>
-                <option value="shared table and food layer">shared table and food layer</option>
-                <option value="distributed trail">distributed trail</option>
-              </select>
-            </label>
-            <label>
-              Projection status
-              <span>Light can be beautiful, annoying or unsafe depending on the space.</span>
-              <select name="projection">
-                <option value="unknown">unknown</option>
-                <option value="small temporary screen">small temporary screen</option>
-                <option value="indoor wall only">indoor wall only</option>
-                <option value="ambient low-light only">ambient low-light only</option>
-                <option value="unsuitable">unsuitable</option>
-              </select>
-            </label>
-            <label>
-              Transport signal
-              <span>Late movement matters on an island.</span>
-              <select name="transport">
-                <option value="late-risk">late-return risk</option>
-                <option value="ferry-adjacent">ferry-adjacent</option>
-                <option value="bus-linked">bus-linked</option>
-                <option value="local-only">local-only</option>
-                <option value="needs partner data">needs partner data</option>
-              </select>
-            </label>
-            <label>
-              Local consent
-              <span>Until this is started, everything remains question gathering.</span>
-              <select name="localConsent">
-                <option value="pending-contact">pending contact</option>
-                <option value="host-curious">host is curious</option>
-                <option value="stallholder-curious">stallholders are curious</option>
-                <option value="needs-cultural-check">needs cultural check</option>
-              </select>
-            </label>
-            <label>
-              Food stalls?
-              <span>Food can be central, but it adds compliance and safety questions.</span>
-              <select name="food">
-                <option value="pending">pending</option>
-                <option value="yes">yes, possible</option>
-              </select>
-            </label>
+          <form class="mapper-form" id="market-onboarding-form" data-market-form>
+            <input type="hidden" name="form_source" value="Straddie Market Onboarding form">
+            <input type="hidden" name="record_markdown" value="" data-onboarding-record-input>
+            <input type="hidden" name="record_filename" value="" data-onboarding-record-filename>
+            <fieldset>
+              <legend>Application Type</legend>
+              <label>
+                What are you trying to do?
+                <span>Choose the closest match.</span>
+                <select name="intent">
+                  <option value="apply for a market stall">apply for a market stall</option>
+                  <option value="apply as a food vendor">apply as a food vendor</option>
+                  <option value="offer music, art, performance or projection">offer music, art, performance or projection</option>
+                  <option value="offer a venue or host space">offer a venue or host space</option>
+                  <option value="coordinate an existing market or event">coordinate an existing market or event</option>
+                  <option value="suggest a new market idea">suggest a new market idea</option>
+                  <option value="volunteer or help with notices/media/setup">volunteer or help with notices/media/setup</option>
+                </select>
+              </label>
+              <label>
+                Preferred market, venue or event
+                <span>Select one, or add a new idea.</span>
+                <select name="location"></select>
+              </label>
+              <div class="new-location-fields" data-new-location-fields hidden>
+                <label>
+                  New market, venue or event name
+                  <span>Use a clear public name.</span>
+                  <input name="newLocationName" type="text" placeholder="e.g. Amity music night, Dunwich hall market">
+                </label>
+                <label>
+                  Village or area
+                  <span>Dunwich, Amity, Point Lookout, island-wide or another clear area.</span>
+                  <input name="newLocationVillage" type="text" placeholder="e.g. Amity">
+                </label>
+                <label>
+                  Host or organiser, if known
+                  <span>Leave blank if this still needs research.</span>
+                  <input name="newLocationHost" type="text" placeholder="e.g. venue, club, event organiser">
+                </label>
+              </div>
+              <label>
+                Date, season or availability
+                <span>Choose a broad window first.</span>
+                <select name="season"></select>
+              </label>
+              <label>
+                Specific dates or availability
+                <span>Examples: 6 July, school holidays, Saturday mornings, flexible.</span>
+                <input name="availability" type="text" placeholder="e.g. July school holidays, Saturdays, flexible">
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Your Details</legend>
+              <label>
+                Name, business or group
+                <span>This is the name organisers should recognise.</span>
+                <input name="displayName" type="text" placeholder="e.g. Island Prints, Aunty May's weaving, Amity BBQ crew">
+              </label>
+              <label>
+                Contact for follow-up
+                <span>Email, phone, Instagram, Facebook page or preferred contact.</span>
+                <input name="followUpContact" type="text" placeholder="Private follow-up contact">
+              </label>
+              <label>
+                Public listing contact
+                <span>Only add what can safely appear in a public listing.</span>
+                <input name="publicContact" type="text" placeholder="Public website, social page, booking link or leave blank">
+              </label>
+              <label>
+                Can public listings use your name and public contact?
+                <span>Organisers can still review before anything is published.</span>
+                <select name="publicPermission">
+                  <option value="ask before publishing">ask before publishing</option>
+                  <option value="yes, name and public contact are ok">yes, name and public contact are ok</option>
+                  <option value="name only, contact stays private">name only, contact stays private</option>
+                  <option value="keep private for now">keep private for now</option>
+                </select>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Stall Or Offer</legend>
+              <label>
+                What will you sell, show, serve or do?
+                <span>Plain description for organiser review.</span>
+                <textarea name="offerSummary" rows="3" placeholder="Handmade earrings, prints and cards, coffee van, live acoustic set, projection loop, market helper, etc."></textarea>
+              </label>
+              <label>
+                Category
+                <span>This helps avoid too many duplicate stalls.</span>
+                <select name="category">
+                  <option value="art, craft or handmade goods">art, craft or handmade goods</option>
+                  <option value="fresh produce or plants">fresh produce or plants</option>
+                  <option value="food or drinks">food or drinks</option>
+                  <option value="pre-loved or vintage">pre-loved or vintage</option>
+                  <option value="music or performance">music or performance</option>
+                  <option value="projection, screen or media">projection, screen or media</option>
+                  <option value="community, charity or rescue">community, charity or rescue</option>
+                  <option value="local service or business">local service or business</option>
+                  <option value="venue, host space or market idea">venue, host space or market idea</option>
+                </select>
+              </label>
+              <label>
+                Product photos, website or social links
+                <span>Real markets often need photos or socials to assess fit.</span>
+                <textarea name="proofLinks" rows="3" placeholder="Website, Instagram, Facebook, photo folder link, product photos, menu link, stall layout photo."></textarea>
+              </label>
+              <label>
+                Stall layout or presentation
+                <span>Describe your table, marquee, signage, racks, trailer, display or setup.</span>
+                <textarea name="stallLayout" rows="3" placeholder="Example: 3x3 white marquee, one table, print rack, battery lights, no power needed."></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Site Needs</legend>
+              <label>
+                Stall size
+                <span>Pick the closest setup.</span>
+                <select name="stallSize">
+                  <option value="2m x 1m table space">2m x 1m table space</option>
+                  <option value="3m x 3m marquee">3m x 3m marquee</option>
+                  <option value="food truck or trailer">food truck or trailer</option>
+                  <option value="performance or workshop space">performance or workshop space</option>
+                  <option value="projection or screen area">projection or screen area</option>
+                  <option value="not sure yet">not sure yet</option>
+                </select>
+              </label>
+              <fieldset class="checkbox-group">
+                <legend>What do you need onsite?</legend>
+                <label><input type="checkbox" name="siteNeeds" value="table"> table</label>
+                <label><input type="checkbox" name="siteNeeds" value="chair"> chair</label>
+                <label><input type="checkbox" name="siteNeeds" value="marquee or shelter"> marquee or shelter</label>
+                <label><input type="checkbox" name="siteNeeds" value="power"> power</label>
+                <label><input type="checkbox" name="siteNeeds" value="battery lighting"> battery lighting</label>
+                <label><input type="checkbox" name="siteNeeds" value="water"> water</label>
+                <label><input type="checkbox" name="siteNeeds" value="bins and cleanup point"> bins and cleanup point</label>
+                <label><input type="checkbox" name="siteNeeds" value="vehicle access"> vehicle access</label>
+                <label><input type="checkbox" name="siteNeeds" value="EFTPOS reception"> EFTPOS reception</label>
+                <label><input type="checkbox" name="siteNeeds" value="wall, screen or hanging space"> wall, screen or hanging space</label>
+              </fieldset>
+              <label>
+                Setup and pack-down needs
+                <span>Times, vehicle access, weather cover, heavy gear, lighting, help needed.</span>
+                <textarea name="setupNotes" rows="3" placeholder="What do organisers need to know before placing you on a site map?"></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Required Checks</legend>
+              <label>
+                Public liability insurance
+                <span>Many markets require a current certificate.</span>
+                <select name="insurance">
+                  <option value="yes, current public liability insurance">yes, current public liability insurance</option>
+                  <option value="not yet, need guidance">not yet, need guidance</option>
+                  <option value="covered by organiser or venue to confirm">covered by organiser or venue to confirm</option>
+                  <option value="not sure">not sure</option>
+                </select>
+              </label>
+              <label>
+                Food licence or food safety details
+                <span>Only required if selling or serving food or drink.</span>
+                <select name="foodCheck">
+                  <option value="not relevant">not relevant</option>
+                  <option value="food licence held">food licence held</option>
+                  <option value="temporary food stall permit needed">temporary food stall permit needed</option>
+                  <option value="pre-packaged food only">pre-packaged food only</option>
+                  <option value="venue kitchen or venue menu only">venue kitchen or venue menu only</option>
+                  <option value="not sure">not sure</option>
+                </select>
+              </label>
+              <label>
+                Food, gas or electrical notes
+                <span>Menu, allergens, cold storage, gas, tagged leads, power draw, water, handwashing, waste.</span>
+                <textarea name="foodSafetyNotes" rows="3" placeholder="Leave blank if not relevant."></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Venue, Organiser Or Local Idea</legend>
+              <label>
+                If offering a venue or suggesting an idea, describe it here
+                <span>Include site, host, rough capacity, timing, toilets, access, weather, noise or neighbours.</span>
+                <textarea name="venueIdea" rows="3" placeholder="Example: small twilight maker row beside an existing music night, with host approval still needed."></textarea>
+              </label>
+              <label>
+                Visitor information
+                <span>What should people know before they arrive?</span>
+                <textarea name="visitorInfo" rows="3" placeholder="Times, cost, booking, meals, toilets, accessibility, wet weather, cash/card, parking, ferry, bus, last return."></textarea>
+              </label>
+              <label>
+                Anything that needs review first?
+                <span>Venue approval, organiser approval, cultural care, food safety, media, music, image or sponsor approval.</span>
+                <textarea name="reviewNotes" rows="3" placeholder="What should be checked before anyone publishes or promotes this?"></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Next Step</legend>
+              <label>
+                What should happen next?
+                <span>Choose the action this record needs.</span>
+                <select name="nextStep">
+                  <option value="contact applicant">contact applicant</option>
+                  <option value="match with a market organiser">match with a market organiser</option>
+                  <option value="check with venue or host">check with venue or host</option>
+                  <option value="request photos, layout or documents">request photos, layout or documents</option>
+                  <option value="add to public listing after review">add to public listing after review</option>
+                  <option value="keep private for now">keep private for now</option>
+                </select>
+              </label>
+              <label>
+                Internal follow-up notes
+                <span>Private notes for the organiser or data helper.</span>
+                <textarea name="followUpNotes" rows="3" placeholder="Who should contact whom, what is missing, and what needs checking?"></textarea>
+              </label>
+            </fieldset>
           </form>
 
           <div>
-            <section class="mapper-output" data-mapper-output aria-live="polite"></section>
-            <h3 style="margin-top: 1.5rem;">Draft public notice starter</h3>
-            <p class="page-copy">This is the kind of cautious file the Noticeboard Network could use after verification.</p>
-            <textarea id="notice-output" class="notice-output" data-notice-output readonly></textarea>
-            <button class="copy-button" type="button" data-copy-target="#notice-output">Copy notice draft</button>
+            <section class="mapper-output" data-market-output aria-live="polite"></section>
+            <h3 style="margin-top: 1.5rem;">Application Record</h3>
+            <p class="page-copy">Use this as the shared record for follow-up, organiser review or a public listing after approval.</p>
+            <textarea id="notice-output" class="notice-output" data-record-output readonly></textarea>
+            <div class="record-actions">
+              <button class="copy-button" type="submit" form="market-onboarding-form" data-submit-onboarding>Submit onboarding form</button>
+              <button class="copy-button" type="button" data-download-record>Download record</button>
+            </div>
+            <p class="form-status" data-onboarding-status aria-live="polite"></p>
           </div>
         </div>
       </section>
+
+      <nav class="sequence-nav" aria-label="Previous and next pages">
+        <a class="sequence-link previous" href="index.html">
+          <span class="sequence-kicker">Previous</span>
+          <span>Home</span>
+        </a>
+        <a class="sequence-link next" href="transport.html">
+          <span class="sequence-kicker">Next</span>
+          <span>Transport</span>
+        </a>
+      </nav>
     </main>
     <footer class="site-footer">
       <div class="footer-copy">
-        <p>The mapper keeps the first step light.</p>
-        <p class="footer-note">A draft notice is a starter for host review and verification.</p>
+        <p>Community onboarding for shared market data.</p>
+        <p class="footer-note">Applications and public listings need organiser review.</p>
       </div>
     </footer>
     <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
-    <script src="data/market-data.js"></script>
+    <script src="data/market-data.js?v=20260522-events"></script>
     <script src="app.js"></script>
   </body>
 </html>
-

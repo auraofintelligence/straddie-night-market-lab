@@ -12,11 +12,11 @@
       sourceIds: ["plbc-markets", "straddie-pl-markets", "sealink-pl-markets"],
       tags: ["existing-market", "school-holidays", "family", "daytime-baseline"],
       questions: [
-        "Who currently coordinates stall bookings and what data do they already collect?",
-        "Would existing stallholders want twilight trading, and how would it sit beside their current pattern?",
-        "What is the latest practical pack-down time for families, staff and transport?",
-        "Is there a wall, screen, lawn edge or temporary surface suitable for low-impact projection?",
-        "Which school holiday dates already have strong market demand?"
+        "Who manages bookings, fees and cancellation notices for the current markets?",
+        "Which dates and times already have venue approval and strong audience demand?",
+        "How many extra twilight stalls can fit without blocking access, staff paths or bowls operations?",
+        "What setup, power, lighting and pack-down rules would stallholders need?",
+        "What visitor FAQ is needed: parking, toilets, bus stop, last ferry, wet weather or cash/card?"
       ]
     },
     {
@@ -31,11 +31,11 @@
       sourceIds: ["little-ship-hours", "little-ship-event", "visit-by-boat"],
       tags: ["sunset", "waterfront", "dunwich", "ferry-adjacent"],
       questions: [
-        "Which trading days can realistically support a twilight add-on?",
-        "Would a projection need to be indoors, on a temporary screen, or kept as small ambient light?",
-        "Can ferry-arrival visitors reach the site while keeping closing time calm?",
-        "Would the club prefer a single stall, a maker strip, or a music-linked pop-up?",
-        "What would be the quietest, safest pack-down route after dark?"
+        "Which exact opening hours, setup window and pack-down deadline are possible?",
+        "Which approved area could hold a stall table without interrupting dining, bar or marina access?",
+        "Which ferry and bus arrivals match a sunset session and last return?",
+        "What power, screen and low-light options are approved by the club?",
+        "What visitor FAQ is needed: bookings, meals, weather, parking and return travel?"
       ]
     },
     {
@@ -50,11 +50,30 @@
       sourceIds: ["straddie-hotel", "events-on-straddie"],
       tags: ["late-trade", "music", "visitor", "point-lookout"],
       questions: [
-        "Where could a stall sit while keeping staff, diners, accessibility and emergency paths clear?",
-        "Would projection support live music, a wall feature, a small screen, or a no-projection market night?",
-        "What times already have enough foot traffic while keeping crowd levels comfortable?",
-        "Could a noticeboard QR capture visitor origin, boat choice and stay length?",
-        "Which local makers or food stalls would complement the venue's existing offer?"
+        "Which event nights or spaces already allow external stallholders or makers?",
+        "Where can stalls fit without blocking staff, diners, accommodation access or emergency paths?",
+        "What setup time, pack-down time, power, lighting and sound limits apply?",
+        "Which opt-in attendee fields are useful: visitor type, accommodation area, arrival mode or departure time?",
+        "What public FAQ is needed: entry cost, booking, food availability, accessibility and transport?"
+      ]
+    },
+    {
+      id: "straddie-brewing-co",
+      name: "Straddie Brewing Co",
+      village: "Dunwich",
+      currentSignal: "Island brewery, taproom and food venue near the Dunwich / Gumpi gateway, with public brewery, food, tour and ocean-view visitor signals.",
+      conceptUse: "A pub-and-brewery host candidate for ferry-side visitor flow, tasting events, music, tours, food, small maker tables or projection-linked evening tests if the venue wants it.",
+      bestWindows: ["Ferry-side arrival windows", "Weekend afternoons", "Brewery tours", "Shoulder-season evenings"],
+      projectionFit: "Possible only after checking venue approval, sightlines, light spill, brand fit, dining flow and neighbouring uses.",
+      transportFit: "Strong Dunwich gateway fit. Needs last ferry, water taxi, bus, taxi and walking-route checks before any public event wording.",
+      sourceIds: ["straddie-brewing", "straddie-brewing-island-listing", "events-on-straddie"],
+      tags: ["dunwich", "brewery", "pub", "food", "visitor"],
+      questions: [
+        "Which brewery, food, tour or music windows could support a small market add-on?",
+        "Where could a stall, QR notice, projection or display fit without blocking staff, diners, tours or access?",
+        "What alcohol, food, licensing, age, responsible-service and safety rules shape the event?",
+        "Which ferry, bus, taxi and walking details should appear before visitors plan around it?",
+        "What public FAQ is needed: booking, meals, accessibility, tour times, weather, toilets and return travel?"
       ]
     },
     {
@@ -69,11 +88,11 @@
       sourceIds: ["amity-club", "straddie-events-transport"],
       tags: ["amity", "music", "community-club", "family"],
       questions: [
-        "Which existing Amity music nights could carry a small market layer?",
-        "How would visitors get back to accommodation or ferries safely after dark?",
-        "Would locals prefer a regular small pattern or occasional stronger events?",
-        "What should stay Amity-local and resident-first?",
-        "Where can projection be placed while protecting neighbours and the bayfront feel?"
+        "Which music or community dates have host approval for an add-on market?",
+        "How many stallholders or local groups can fit in the available area?",
+        "What return options exist after the event for Amity locals and visitors?",
+        "What stallholder needs can the venue support: table, power, lighting, food compliance or EFTPOS?",
+        "What public FAQ is needed: parking, courtesy bus, meals, accessibility and wet weather?"
       ]
     },
     {
@@ -88,11 +107,11 @@
       sourceIds: ["ubuntu-expo", "arts-trail"],
       tags: ["arts", "community-hall", "indoor", "projection"],
       questions: [
-        "Is the event mainly for residents, visitors, artists, or a mixed room?",
-        "Which projection content needs cultural review before display?",
-        "Can artists add stalls while preserving the event's purpose?",
-        "What is the wet-weather capacity and accessible entry route?",
-        "Could the noticeboard network collect artist availability and stall needs?"
+        "Who is the event organiser and booking contact?",
+        "Which rooms or outdoor areas are available, and what capacity and access limits apply?",
+        "What stall, projection or content approvals are needed before setup?",
+        "Which artist fields are needed: medium, table size, power, install time and sales method?",
+        "What attendee FAQ is needed: times, ticketing, parking, accessibility and wet weather?"
       ]
     },
     {
@@ -107,11 +126,163 @@
       sourceIds: ["straddie-sharks", "events-on-straddie"],
       tags: ["sport", "dunwich", "family", "youth"],
       questions: [
-        "Which sports dates already bring families together with room for a light stall layer?",
-        "Could youth media teams help make projection loops or noticeboard posts?",
-        "What is the club's preferred approach to stalls, food, fundraising and sponsorship?",
-        "How does the courtesy-bus pattern affect safe arrival and departure?",
-        "Can the market collect useful data in a friendly, opt-in way?"
+        "Which sports or community dates have family foot traffic and host approval?",
+        "Which area can hold stalls without blocking the club, field, carpark or emergency access?",
+        "What fundraising, fee, sponsorship or food rules apply?",
+        "Which courtesy-bus, bus and parking details must be confirmed for public notices?",
+        "What youth media or projection content approvals are needed?"
+      ]
+    },
+    {
+      id: "straddie-salute-triathlon",
+      name: "Straddie Salute Triathlon Festival",
+      village: "Point Lookout and island-wide",
+      currentSignal: "Official 2026 pages list a multisport weekend across 16-17 May 2026, with trail run, ocean swim, triathlon, youth events and shuttle details around Dunwich and Point Lookout.",
+      conceptUse: "Use as a visitor-flow and road-pressure source. Any market add-on should support the race organiser, volunteers, safety crews, venues and transport plan rather than adding clutter.",
+      bestWindows: ["Race weekend", "Registration periods", "Volunteer call-outs", "Post-event recaps"],
+      projectionFit: "Possible for results, sponsor thanks or event recaps only with organiser approval and athlete-image permissions.",
+      transportFit: "High value for ferry, bus, shuttle, bike, road and early-morning movement checks.",
+      sourceIds: ["straddie-salute-official", "straddie-salute-nxsports", "straddie-salute-redlands"],
+      tags: ["sport", "triathlon", "visitor-flow", "road-pressure", "point-lookout"],
+      questions: [
+        "Who controls course, road, shuttle and public update wording?",
+        "Which dates and locations create pressure around Point Lookout Oval, Home Beach, ferries and buses?",
+        "Could a stall or notice table support registration, volunteers, recovery food or sponsor thanks without disrupting the event?",
+        "Which public details change late: wave starts, shuttles, weather, road impacts or results?",
+        "What image, sponsor, safety and athlete-permission rules apply before any recap is published?"
+      ]
+    },
+    {
+      id: "gage-roads-straddie-invitational",
+      name: "Gage Roads Straddie Invitational",
+      village: "Point Lookout",
+      currentSignal: "Public listings describe the long-running Straddie Invitational team surfing competition at Point Lookout / Minjerribah, with strong club, sponsor and spectator signals.",
+      conceptUse: "Use as a surf-community and visitor-pressure calendar signal. A market layer would need Point Lookout Boardriders, sponsor, beach-access, weather and parking checks first.",
+      bestWindows: ["Surf competition weekend", "Boardriders updates", "Sponsor and club recaps"],
+      projectionFit: "Possible for approved heat schedules, surf-club history or recap screens away from beach-safety and crowd paths.",
+      transportFit: "Needs ferry, bus, parking, beach access, weather and spectator-flow notes.",
+      sourceIds: ["gage-roads-straddie-invitational", "events-on-straddie"],
+      tags: ["surf", "boardriders", "sponsor", "point-lookout", "visitor-flow"],
+      questions: [
+        "Who is the current organiser and who approves public notices?",
+        "Which beach, carpark, club and sponsor rules shape any side activity?",
+        "Where can spectator information sit without interfering with surf safety or event operations?",
+        "Which transport and weather details matter most for spectators?",
+        "What recap permissions are needed for photos, heats, sponsors and club results?"
+      ]
+    },
+    {
+      id: "straddie-oyster-festival",
+      name: "Straddie Oyster and Seafood Festival",
+      village: "Dunwich",
+      currentSignal: "Public event listings describe local oysters, prawns, live entertainment, market stalls, family activities and the Straddie Sharks / Ballow Road context.",
+      conceptUse: "Use as a food, family and stallholder calendar signal. Any market or projection add-on must follow food-safety, crowd, club and sponsor rules.",
+      bestWindows: ["Seafood festival dates", "Family activity windows", "Food-stall call-outs"],
+      projectionFit: "Possible for menus, sponsor thanks, family activity notices or event recaps if the organiser wants it.",
+      transportFit: "Dunwich fit is useful for ferry-side movement, parking, bus, taxi and club-access checks.",
+      sourceIds: ["straddie-oyster-festival", "straddie-sharks", "events-on-straddie"],
+      tags: ["food", "family", "festival", "market-stalls", "dunwich"],
+      questions: [
+        "Who manages food stalls, market stalls, live entertainment and public notices?",
+        "What food licence, allergen, waste, water and queue information needs publishing?",
+        "Which areas can hold stalls without blocking the club, oval, carpark or emergency access?",
+        "What family activity, weather, ticketing and sold-out details need fast updates?",
+        "Which transport notes help visitors arrive and leave without overloading Dunwich?"
+      ]
+    },
+    {
+      id: "stradbroke-chamber-music-festival",
+      name: "Stradbroke Chamber Music Festival",
+      village: "Point Lookout",
+      currentSignal: "Public listings for 2026 describe a three-day chamber music festival at Point Lookout Community Hall, with intimate concerts and island visitor movement.",
+      conceptUse: "Use as a winter cultural-calendar signal. A small maker, sponsor, program or transport notice layer would need festival approval and quiet event etiquette.",
+      bestWindows: ["July festival weekend", "Concert arrival windows", "Artist talks", "Sponsor thanks"],
+      projectionFit: "Low-key only: approved program notices, sponsor slides, wayfinding or post-concert recaps that respect the music setting.",
+      transportFit: "Needs ferry, bus, parking, hall access and post-concert movement checks.",
+      sourceIds: ["stradbroke-chamber-music", "stradbroke-chamber-music-official", "sealink-chamber-music"],
+      tags: ["music", "winter", "community-hall", "point-lookout", "culture"],
+      questions: [
+        "Who approves festival, artist, venue and ticketing wording?",
+        "Which hall, concert, queue and parking details can be published?",
+        "Could a very small notice or sponsor layer help without breaking the atmosphere?",
+        "Which transport and accessibility notes matter for concertgoers?",
+        "What photography, recording and artist-permission rules apply?"
+      ]
+    },
+    {
+      id: "straddie-chamber-business-network",
+      name: "Straddie Chamber of Commerce and business events",
+      village: "Island-wide",
+      currentSignal: "The Straddie Chamber of Commerce is a business-community source with past-event and member-network signals for island businesses.",
+      conceptUse: "Use as a partner-mapping and business-notice source rather than a market host by default. It can help identify sponsors, local operators and business communication pathways.",
+      bestWindows: ["Business events", "Member updates", "Sponsor calls", "Local economy briefings"],
+      projectionFit: "Possible for approved business directory, sponsor or member-opportunity screens.",
+      transportFit: "Useful across all villages when visitor flow, trading windows and local workforce movement matter.",
+      sourceIds: ["straddie-chamber", "noticeboard-straddie-chamber"],
+      tags: ["business", "chamber", "sponsors", "partner-map", "island-wide"],
+      questions: [
+        "Which business or chamber contact can approve partnership wording?",
+        "Which members, venues or services might want notices, sponsorship or stall involvement?",
+        "What public information is member-approved rather than guessed?",
+        "Which local economy, staffing, freight or visitor-flow concerns should shape event planning?",
+        "What should remain private until a business opts in?"
+      ]
+    },
+    {
+      id: "goompi-naidoc",
+      name: "Goompi Community NAIDOC Celebration",
+      village: "Dunwich / Goompi",
+      currentSignal: "Public 2025 listings describe a free Goompi Community NAIDOC celebration at Dunwich State School Oval with culture, connection, performances, workshops and community organisations.",
+      conceptUse: "Use as a cultural-authority-led calendar source only. Any stall, notice, projection or recap must be invited, reviewed and approved by the right organisers.",
+      bestWindows: ["NAIDOC period", "Community celebration", "Approved cultural program dates"],
+      projectionFit: "Only with organiser and cultural approval. Some material may be unsuitable for projection, capture or public replay.",
+      transportFit: "Needs family, school-oval, parking, bus, ferry and accessibility notes checked with organisers.",
+      sourceIds: ["goompi-naidoc", "quandamooka-festival"],
+      tags: ["naidoc", "cultural-care", "dunwich", "community", "permission-first"],
+      questions: [
+        "Who is the lead organiser and cultural authority for this year's NAIDOC event?",
+        "Which activities, images, stories or names are approved for public notice?",
+        "Is a market, stall, food or helper layer invited by organisers?",
+        "What visitor guidance is needed for respect, access, transport, weather and children?",
+        "Which data should not be collected, photographed or published?"
+      ]
+    },
+    {
+      id: "amity-cricket-tutu-carnival",
+      name: "Amity Point Cricket Club Tutu Carnival",
+      village: "Amity Point",
+      currentSignal: "Public island listings describe Amity Point Cricket Club matches and events, with Tutu Carnival, Putt Putt day and Amber Grail as annual highlights.",
+      conceptUse: "Use as an Amity family-sport and community-fundraising signal. Any market add-on must fit the club's game-day, family, food and transport realities.",
+      bestWindows: ["Tutu Carnival", "Cricket matches", "Putt Putt day", "Amber Grail"],
+      projectionFit: "Possible for family notices, fixtures, sponsor thanks or club recaps if the club approves.",
+      transportFit: "Amity needs extra late-return, parking, courtesy, taxi and bus checks.",
+      sourceIds: ["amity-cricket", "noticeboard-amity-cricket"],
+      tags: ["amity", "cricket", "family", "fundraising", "sport"],
+      questions: [
+        "Who manages Tutu Carnival dates, bookings, sponsorship and public notices?",
+        "Which stall, food, family activity or helper roles are actually wanted?",
+        "How can the event support Amity locals without overloading roads, parking or volunteers?",
+        "Which transport and late-return notes matter for visitors?",
+        "What club-photo, children, sponsor and fundraising permissions apply?"
+      ]
+    },
+    {
+      id: "island-vibe-legacy",
+      name: "Island Vibe Festival legacy and accommodation lesson",
+      village: "Point Lookout / Home Beach",
+      currentSignal: "Island Vibe is a major legacy festival source for music, stalls, workshops and island culture, but public reporting in December 2024 said organisers would not hold it again on Straddie under then-current constraints.",
+      conceptUse: "Use as a cautionary planning source, not as an active Straddie event listing. It shows why accommodation, camping, Council, cultural authority, transport and organiser sustainability must be checked before any festival-scale idea.",
+      bestWindows: ["Historical learning", "Accommodation planning", "Festival-scale feasibility checks"],
+      projectionFit: "Use only for approved legacy storytelling or lessons learned; do not imply a current Island Vibe program without organiser confirmation.",
+      transportFit: "High caution value: accommodation capacity, camping availability, shuttles, ferries and visitor expectations can make or break the event.",
+      sourceIds: ["island-vibe-about", "island-vibe-accommodation", "island-vibe-ends"],
+      tags: ["legacy", "festival", "accommodation", "camping", "point-lookout", "caution"],
+      questions: [
+        "What has the organiser publicly confirmed for the current year?",
+        "Which accommodation, camping and shuttle options are actually open during the proposed dates?",
+        "Which Council, venue, cultural authority and camping constraints must be solved before public promotion?",
+        "What public wording avoids implying an active Straddie festival if it is no longer hosted there?",
+        "What lessons should inform smaller, host-led, lower-pressure market ideas?"
       ]
     },
     {
@@ -126,11 +297,11 @@
       sourceIds: ["quandamooka-festival"],
       tags: ["cultural-care", "artisan", "food-stalls", "country"],
       questions: [
-        "Who has cultural authority for this event and what process do they want?",
-        "Is a market layer welcome, useful, or completely inappropriate?",
-        "What should never be projected, photographed, recorded or commercialised?",
-        "How are visitor numbers capped or guided away from sensitive places?",
-        "Which data can be public, which stays private, and which is left uncollected?"
+        "Who is the cultural or event authority, and what contact pathway should be used?",
+        "Is a stall or market layer invited by organisers, and under what rules?",
+        "Which content, places, images or stories are approved for public notice, photo or projection?",
+        "What visitor capacity, transport and site-protection rules apply?",
+        "Which data can be collected, published, kept private or left uncollected?"
       ]
     },
     {
@@ -145,11 +316,11 @@
       sourceIds: ["arts-trail"],
       tags: ["distributed", "artists", "makers", "trail"],
       questions: [
-        "Which stops want evening visitors and which should stay daytime only?",
-        "Could projection be a wayfinding layer with a gentle visual presence?",
-        "How can visitors move between stops with less car dependence?",
-        "What data helps artists while keeping admin light?",
-        "Could noticeboard feeds show open studios, last updated times and sold-out notices?"
+        "Which stops are open at night and which stay daytime only?",
+        "What opening times, capacity, access and parking details can each stop publish?",
+        "Which artist fields are needed: medium, availability, EFTPOS, power and table size?",
+        "How should route notices show bus, drive and walk options without creating pressure?",
+        "Who updates open, closed, sold-out or changed-time notices?"
       ]
     },
     {
@@ -164,11 +335,11 @@
       sourceIds: ["visit-by-boat", "straddie-events-transport", "flyer"],
       tags: ["ferry", "data", "dunwich", "gateway"],
       questions: [
-        "What questions could ferry partners ask while keeping boarding smooth?",
-        "Can QR scans distinguish day-trippers, overnight visitors and locals with privacy kept intact?",
-        "Which boat choices reduce pressure on roads and late returns?",
-        "What can the noticeboard show at terminals, clubs and venues?",
-        "Who owns the final public message when data changes quickly?"
+        "Which approved sites can host QR information, visitor notices or tiny market tests?",
+        "Which arrival windows should be mapped with SeaLink, Gold Cats / Stradbroke Flyer and buses?",
+        "Which opt-in visitor fields are useful: local/day trip/overnight, arrival mode, next destination and return time?",
+        "Which public notices are useful at terminals: last bus, venue directions, event status and wet weather?",
+        "Who verifies terminal, venue and transport messages before publication?"
       ]
     }
   ],
@@ -176,27 +347,27 @@
     {
       name: "Summer school holidays",
       note: "Peak visitor flow. Strong market demand, but highest transport and crowd-management pressure.",
-      questions: ["Do boats, buses and venues have enough capacity?", "Can the event spread arrivals across calmer windows?", "Is shade, hydration and pack-down planned?"]
+      questions: ["Which dates clash with existing markets, ferries or major events?", "Which travel windows and car parks are highest pressure?", "What shade, water, toilet and wet-weather information must appear in the FAQ?"]
     },
     {
       name: "Easter and autumn holidays",
       note: "Family, sport and community events can make a softer test window.",
-      questions: ["Which existing events already have permission and audiences?", "Could a stall layer support the event's purpose?", "What happens if weather turns?"]
+      questions: ["Which existing events already have approval and an audience?", "Which stall categories fit the event without adding clutter?", "What wet-weather, cancellation and pack-down notice is needed?"]
     },
     {
       name: "Winter whale season",
       note: "Earlier sunsets support projection, and visitors may stay for evening meals.",
-      questions: ["Can the event work with cooler weather and wind?", "Does projection interfere with wildlife, neighbours or coastal darkness?", "Which venues already trade late enough?"]
+      questions: ["Which venues trade late enough for a twilight market?", "What wind, rain, lighting and wildlife limits apply?", "What last-return or overnight-stay guidance should visitors receive?"]
     },
     {
       name: "Spring shoulder season",
       note: "Useful for testing before summer, especially with arts, surf and community calendars.",
-      questions: ["Can a small pilot gather data before peak pressure?", "Which residents and makers want shoulder-season income?", "What should be measured and published?"]
+      questions: ["Which small pilot dates avoid peak-season pressure?", "Which makers, clubs or groups want a shoulder-season trial?", "Which three metrics should be collected: visitor count, stall interest, transport mode or spend range?"]
     },
     {
       name: "Festival and arts windows",
       note: "Only by invitation and with cultural or organiser authority. Strong fit for projection if content is cared for.",
-      questions: ["Who leads the event?", "What can be shown publicly?", "Does a market add value or just noise?"]
+      questions: ["Who is the lead organiser and approval contact?", "Which stalls, content or projection material are approved?", "What public wording and data collection are allowed?"]
     }
   ],
   sourceLinks: {
@@ -228,6 +399,14 @@
       label: "The Straddie Hotel",
       url: "https://moretonhospitality.com.au/venue/the-straddie-hotel/"
     },
+    "straddie-brewing": {
+      label: "Straddie Brewing Co - The Brewery",
+      url: "https://straddiebrewing.com.au/the-brewery/"
+    },
+    "straddie-brewing-island-listing": {
+      label: "North Stradbroke Island - Straddie Brewing Co",
+      url: "https://stradbrokeisland.com/straddie-brewing-co-beer-n-bed/"
+    },
     "flyer": {
       label: "Stradbroke Flyer Gold Cat",
       url: "https://www.flyer.com.au/"
@@ -256,47 +435,123 @@
       label: "Straddie Sharks",
       url: "https://straddiesharks.com/"
     },
+    "straddie-salute-official": {
+      label: "Straddie Salute - event information",
+      url: "https://straddiesalute.com.au/event-information/"
+    },
+    "straddie-salute-nxsports": {
+      label: "NXsports - Straddie Salute entries",
+      url: "https://www.nxsports.org/nxevent/straddie-salute/"
+    },
+    "straddie-salute-redlands": {
+      label: "Visit Redlands Coast - Straddie Salute Triathlon Festival",
+      url: "https://www.visitredlandscoast.com.au/whats-on/event/6543-straddie-salute-triathlon-festival"
+    },
+    "gage-roads-straddie-invitational": {
+      label: "North Stradbroke Island - Gage Roads Straddie Invitational",
+      url: "https://stradbrokeisland.com/gage-roads-straddie-invitational-2025-surfing-competition/"
+    },
+    "straddie-oyster-festival": {
+      label: "North Stradbroke Island - Straddie Oyster and Seafood Festival",
+      url: "https://stradbrokeisland.com/straddie-oyster-festival/"
+    },
+    "stradbroke-chamber-music": {
+      label: "North Stradbroke Island - Stradbroke Chamber Music Festival",
+      url: "https://stradbrokeisland.com/stradbroke-chamber-music-festival/"
+    },
+    "stradbroke-chamber-music-official": {
+      label: "Stradbroke Chamber Music Festival",
+      url: "https://www.stradmusic.org.au/home"
+    },
+    "sealink-chamber-music": {
+      label: "SeaLink - Stradbroke Chamber Music Festival",
+      url: "https://www.sealink.com.au/north-stradbroke-island/events/stradbroke-chamber-music-festival/"
+    },
+    "straddie-chamber": {
+      label: "Straddie Chamber of Commerce",
+      url: "https://straddiechamber.org/"
+    },
+    "noticeboard-straddie-chamber": {
+      label: "Noticeboard entity - Straddie Chamber of Commerce",
+      url: "https://auraofintelligence.github.io/straddie-noticeboard-network/entities/straddie-chamber-of-commerce.html"
+    },
+    "goompi-naidoc": {
+      label: "Visit Redlands Coast - Goompi Community NAIDOC Celebration",
+      url: "https://www.visitredlandscoast.com.au/redlandscoastadventurefest/redlands-coast-adventurefest-program/event/6473-goompi-community-naidoc-celebration-the-next-generation-strength-vision-and-legacy"
+    },
+    "amity-cricket": {
+      label: "North Stradbroke Island - Amity Point Cricket Club",
+      url: "https://stradbrokeisland.com/amity-point-cricket-club/"
+    },
+    "noticeboard-amity-cricket": {
+      label: "Noticeboard entity - Amity Point Cricket Club",
+      url: "https://auraofintelligence.github.io/straddie-noticeboard-network/entities/amity-point-cricket-club.html"
+    },
+    "island-vibe-about": {
+      label: "Island Vibe Festival - about",
+      url: "https://www.islandvibe.com.au/about"
+    },
+    "island-vibe-accommodation": {
+      label: "Island Vibe Festival - accommodation",
+      url: "https://www.islandvibe.com.au/accommodation"
+    },
+    "island-vibe-ends": {
+      label: "Redland Bayside News - Island Vibe Festival ends on Stradbroke",
+      url: "https://redlandbaysidenews.com.au/island-vibe-festival-ends/"
+    },
     "events-on-straddie": {
       label: "North Stradbroke Island - Events on Straddie",
       url: "https://stradbrokeisland.com/events/whats-on/"
     }
   },
-  universalQuestions: {
+  questionBatches: {
     venue: [
-      "Who can say yes, who must be consulted, and who could be affected?",
-      "Is the event indoor, outdoor, waterfront, roadside, oval, hall, deck or mixed?",
-      "What is already happening there, and would a market layer help or interfere?",
-      "What is the maximum crowd that feels good before it feels extractive?"
+      "Who can approve the idea, dates, times and public wording?",
+      "Which area could be used without blocking staff, customers, emergency paths or neighbours?",
+      "What setup, pack-down, power, lighting, toilets, waste and wet-weather rules apply?",
+      "What fees, insurance, permits, cleaning or venue conditions would participants need to know?",
+      "Which details are safe to publish once the host has reviewed them?"
     ],
-    market: [
-      "How many stalls can fit while keeping flow, access and staff work clear?",
-      "Are stalls local makers, food, information, music, projection, repairs, tech help or mixed?",
-      "Does the host want stall fees, revenue share, fundraising, in-kind value or a free community layer?",
-      "What data should be collected from stallholders before anyone is invited publicly?"
+    organiser: [
+      "Is this a new market, an extension of an existing market, or an add-on to another event?",
+      "Who manages stall bookings, fees, bump-in, cancellations and public updates?",
+      "Which stall categories are welcome, full, duplicated or unsuitable for this event?",
+      "What is the maximum stall count before the event feels crowded or hard to manage?",
+      "What does the organiser need from the venue, stallholders, food providers, artists and transport partners?"
     ],
-    projection: [
-      "What surface is available, and who owns it?",
-      "How bright can the projection be while respecting neighbours, wildlife and drivers?",
-      "Does any content need cultural, artist or venue approval before display?",
-      "Is power reliable, weather protected and safely cabled?"
+    stallholder: [
+      "What is being sold, displayed or demonstrated, and does it fit the event audience?",
+      "How much space is needed: table size, shelter, racks, stock boxes, queue space or vehicle access?",
+      "What support is needed: power, light, EFTPOS reception, water, storage, seating or waste bins?",
+      "What are the setup, pack-down, fee, insurance and cancellation requirements?",
+      "What visitor FAQ would help sales: price range, card/cash, custom orders, accessibility or weather plan?"
     ],
-    transport: [
-      "Which ferries, buses, courtesy buses and walking routes match the proposed time?",
-      "What is the last safe return option for day visitors?",
-      "Would a different boat choice spread arrivals or reduce road pressure?",
-      "What visitor-flow data can be gathered with private personal details left out?"
+    artist: [
+      "Is the contribution a stall, performance, workshop, display, screen work or light projection?",
+      "What space, timing, sound, lighting, power, hanging points or weather cover is needed?",
+      "Which images, music, stories, brands or cultural material need approval before public use?",
+      "Who owns the work, and what photos or recordings are allowed for notices or recaps?",
+      "What fee, sales method, tech check, pack-down and backup plan is required?"
+    ],
+    foodProvider: [
+      "What food format is proposed: venue menu, food truck, stall, snack table, barbecue or tasting?",
+      "Who holds the food licence or approval, and what documents does the host need?",
+      "What is required for water, handwashing, cold storage, power, gas, serving space, bins and cleanup?",
+      "What dietary, allergen, price range, queue and sold-out information should visitors see?",
+      "Who manages leftovers, waste, weather cancellation and end-of-night pack-down?"
+    ],
+    visitorInfo: [
+      "Who is the event for: locals, day visitors, overnight visitors, families, workers, artists or mixed groups?",
+      "Which ferries, buses, courtesy buses, walking routes, parking areas and last-return options should be checked?",
+      "What public details matter most: date, time, cost, host, toilets, meals, accessibility, wet weather and contact?",
+      "What should visitors know before travelling so they do not overload the venue, roads or ferry terminals?",
+      "Who updates changed times, sold-out notices, cancellations and transport advice?"
     ],
     noticeboard: [
-      "What should appear on public screens, and what must stay private?",
-      "Who verifies times, venue approval, stall contacts and cancellation notices?",
-      "When should a notice expire automatically?",
-      "What is the simplest QR question that helps the next decision?"
-    ],
-    sharedTable: [
-      "Is this a snack stall, shared meal, food rescue, produce swap or no-food event?",
-      "Where are tables, bins, water, prep zones, paths and power?",
-      "What can be published as public-safe learning after the trial?",
-      "What should stay private, culturally restricted or outside the collection scope?"
+      "What exact public details are confirmed: date, time, place, host, cost and contact?",
+      "Who can update cancellations, weather changes and sold-out notices?",
+      "When does the notice expire or need review?",
+      "Which single QR question improves planning most?"
     ]
   }
 };

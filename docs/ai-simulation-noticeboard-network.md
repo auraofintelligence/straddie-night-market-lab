@@ -2,7 +2,7 @@
 
 This note integrates the extra source files into the Straddie Market Onboarding.
 
-The near-term job stays simple: help people onboard into useful roles while the wider market pattern remains host-led or organiser-led.
+The near-term job stays simple: help people register interest, offer stalls or services, suggest venues and create useful records while market activity remains host-led or organiser-led.
 
 ## Source Dossiers
 
@@ -13,7 +13,8 @@ The near-term job stays simple: help people onboard into useful roles while the 
 - `Straddie_Media_Program_Development.md`: hyperlocal news, citizen journalism, digital welcome pack, ferry screens and local beat structure.
 - `Sovereign_Space_Builder__Full_System_Specification.md`: scan, design, simulate, do, review and share loop for real-place data.
 - `Sovereign_Space_Builder__Full_System_Specification_(2).md`: focused schema and API reference material.
-- Ready S.E.T. Co-op + Hyperlocal Media: training pathway, public story engine, content rhythm and public-proof loop.
+- Strange But True: near-term sole-trader service lane for practical tech help, event media, projection, public notices, grant support and small website fixes.
+- Ready S.E.T. Co-op + Hyperlocal Media: later partner-shaped Straddie Employment and Training pathway, public story engine, content rhythm and public-proof loop.
 - Stradbroke Grants Lab entities: public research map for groups, businesses, artists, services, clubs and grant applicants.
 
 ## Practical Integration
@@ -28,7 +29,7 @@ The site can treat every suggested night-market idea as a small data packet:
 - market shape
 - projection fit
 - transport fit
-- Shared Table fit
+- food-vendor fit
 - open questions
 - source links
 - expiry date
@@ -43,12 +44,12 @@ That same packet can serve four layers:
 
 ## Future Agent Roles
 
-- Transport mapper: compares ferry, bus, courtesy-bus and last-return assumptions.
+- Transport helper: compares ferry, bus, courtesy-bus and last-return assumptions.
 - Market questioner: turns any new venue into a host-review question set.
 - Notice editor: checks status, expiry, public-safe copy and source links.
 - Media beat sorter: routes confirmed items into markets, music, sport, ferry, arts, business or community updates.
 - Simulation scribe: records assumptions for later digital twin testing.
-- Entity mapper: searches the Grants Lab entity list before outreach so contact stays organised and respectful.
+- Entity helper: searches the Grants Lab entity list before outreach so contact stays organised and respectful.
 - Training scribe: turns a market help desk or small workshop into public proof for Ready S.E.T. Media.
 
 ## Data Boundary
@@ -60,6 +61,8 @@ Private planning data can include host contacts, unverified ideas, cultural revi
 Quandamooka cultural material requires the right authority, consent and review before any public notice, media item, projection or AI-generated summary.
 
 ## Ready S.E.T. Media Bridge
+
+The near-term pathway starts with Strange But True proving useful services in public. If enough trust and support builds, Ready S.E.T. Co-op can hold the shared employment and training layer with businesses, NFPOs, clubs and community partners.
 
 The Ready S.E.T. path adds a practical rhythm:
 
@@ -98,15 +101,16 @@ Suggested fields to carry into a market note:
 
 ```yaml
 title: Possible night market test
-status: question gathering only
+status: draft
+next_step: host confirmation
 host_review: pending
 location: Straddie Hotel
 season_window: winter whale season
 contributor_role: projection contributor
 market_shape: host-led music night add-on
-projection_status: needs site walk
-transport_status: last-return check needed
-shared_table_layer: optional
+art_or_projection: needs site walk if included
+visitor_travel: last-return check needed for day visitors
+food_layer: optional
 simulation_seed:
   crowd_flow: unknown
   ferry_choice: ask visitor

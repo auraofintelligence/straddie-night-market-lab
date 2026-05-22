@@ -1,4 +1,45 @@
-﻿const marketData = window.MARKET_DATA || { locations: [], seasons: [], sourceLinks: {}, universalQuestions: {} };
+const marketData = window.MARKET_DATA || { locations: [], seasons: [], sourceLinks: {} };
+const CUSTOM_LOCATION_ID = "__new_location__";
+const RECORD_EMAIL = "sbt4183@gmail.com";
+const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_SeHDhJiEJYR7jtxsu948tmHUQk-o1a5QiUy8CKEBW2D40B4hBFZrOEavPaKNxHF_/exec";
+const ONBOARDING_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxN7uMlq4FHUrysCDiNV6FI_A8nvSKR1EO2dFjSzbKymC5iQfKKEIBBQ7YS6In7t8yx/exec";
+const RELATED_LINKS = [
+  {
+    label: "Strange But True About",
+    url: "https://auraofintelligence.github.io/strange-but-true/about.html",
+    note: "Background on the Strange But True service context for practical tech help, event media and creative experiments."
+  },
+  {
+    label: "Straddie Noticeboard Network",
+    url: "https://auraofintelligence.github.io/straddie-noticeboard-network/",
+    note: "Public notices, changed details, ferry reminders, venue-screen copy and simple markdown updates."
+  },
+  {
+    label: "Local Media",
+    url: "https://auraofintelligence.github.io/ready-set-co-op-hyperlocal-media/index.html",
+    note: "Weekend wraps, gig-guide items, small interviews, event recaps and beginner-friendly community media tasks."
+  },
+  {
+    label: "Grants Entity Map",
+    url: "https://auraofintelligence.github.io/stradbroke-grants-lab/entities.html",
+    note: "Public information about groups, clubs, makers, services and possible project partners."
+  },
+  {
+    label: "Resilience Screens",
+    url: "https://auraofintelligence.github.io/straddie-disaster-kiosks/",
+    note: "Ideas for weather, outage, ferry disruption and emergency information screens."
+  },
+  {
+    label: "Amity Fitness Grant",
+    url: "https://auraofintelligence.github.io/amity-outdoor-fitness-grant/",
+    note: "Outdoor fitness, safer access, local health infrastructure and grant-ready community facility planning."
+  },
+  {
+    label: "Strange But True",
+    url: "https://auraofintelligence.github.io/strange-but-true/",
+    note: "Tech help, projection, event media, public notices and small practical experiments for local market nights."
+  }
+];
 
 const toggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector("#nav-links");
@@ -41,233 +82,354 @@ if (topButton) {
   });
 }
 
-function sourceList(sourceIds = []) {
-  const links = sourceIds
-    .map((id) => marketData.sourceLinks[id])
-    .filter(Boolean)
-    .map((source) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label}</a>`);
-
-  return links.length ? `<div class="source-row">${links.join("")}</div>` : "";
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
-function locationCard(location, compact = false) {
-  const tags = location.tags.map((tag) => `<span>${tag.replaceAll("-", " ")}</span>`).join("");
-  const questions = location.questions
-    .slice(0, compact ? 2 : 4)
-    .map((question) => `<li>${question}</li>`)
-    .join("");
+function clean(value, fallback = "to confirm") {
+  const text = String(value || "").trim();
+  return text || fallback;
+}
 
+function checkedValues(form, name) {
+  return [...form.querySelectorAll(`input[name="${name}"]:checked`)].map((item) => item.value);
+}
+
+function slugify(value) {
+  const slug = String(value || "market-onboarding-record")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+  return slug || "market-onboarding-record";
+}
+
+function relatedLinksText() {
+  return RELATED_LINKS
+    .map((link) => `- ${link.label}: ${link.url}\n  ${link.note}`)
+    .join("\n");
+}
+
+function buildEmailBody(recordText) {
+  return `Hello Strange But True,
+
+Here is a Straddie Market Onboarding record for review.
+
+${recordText}
+
+Related links to keep exploring:
+
+${relatedLinksText()}
+
+Thanks for taking a look. Please keep exploring the connected pages if they help with notices, media, grants, resilience planning or future market coordination.
+`;
+}
+
+function currentLocation(values) {
+  if (values.location !== CUSTOM_LOCATION_ID) {
+    return marketData.locations.find((item) => item.id === values.location) || marketData.locations[0] || {};
+  }
+
+  return {
+    id: CUSTOM_LOCATION_ID,
+    name: clean(values.newLocationName, "New market, venue or event"),
+    village: clean(values.newLocationVillage, "area to confirm"),
+    conceptUse: `Suggested host or organiser: ${clean(values.newLocationHost, "to confirm")}.`,
+    sourceIds: []
+  };
+}
+
+function summaryCard(title, value, fallback = "To confirm.") {
   return `
-    <article class="location-card" data-village="${location.village}" data-tags="${location.tags.join(" ")}">
-      <div class="location-card-head">
-        <p class="eyebrow">${location.village}</p>
-        <h3>${location.name}</h3>
-      </div>
-      <p>${location.currentSignal}</p>
-      <p>${location.conceptUse}</p>
-      <div class="tag-list">${tags}</div>
-      <div class="mini-grid">
-        <div>
-          <strong>Projection fit</strong>
-          <span>${location.projectionFit}</span>
-        </div>
-        <div>
-          <strong>Transport fit</strong>
-          <span>${location.transportFit}</span>
-        </div>
-      </div>
-      <details ${compact ? "" : "open"}>
-        <summary>Questions to ask first</summary>
-        <ul>${questions}</ul>
-      </details>
-      ${sourceList(location.sourceIds)}
+    <article class="question-batch">
+      <h4>${title}</h4>
+      <p>${escapeHtml(clean(value, fallback))}</p>
     </article>
   `;
 }
 
-function renderLocationGrids() {
-  document.querySelectorAll("[data-location-grid]").forEach((grid) => {
-    const limit = Number(grid.getAttribute("data-limit") || marketData.locations.length);
-    const compact = grid.hasAttribute("data-compact");
-    const locations = marketData.locations.slice(0, limit);
-    grid.innerHTML = locations.map((location) => locationCard(location, compact)).join("");
-  });
-}
-
-function initFilters() {
-  const filterHost = document.querySelector("[data-location-filters]");
-  const grid = document.querySelector("[data-location-grid]");
-  if (!filterHost || !grid) return;
-
-  const villages = ["All", ...new Set(marketData.locations.map((location) => location.village))];
-  filterHost.innerHTML = villages
-    .map((village, index) => `<button type="button" class="filter-button ${index === 0 ? "is-active" : ""}" data-filter="${village}">${village}</button>`)
-    .join("");
-
-  filterHost.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-filter]");
-    if (!button) return;
-    const filter = button.getAttribute("data-filter");
-    filterHost.querySelectorAll(".filter-button").forEach((item) => {
-      item.classList.toggle("is-active", item === button);
-    });
-    grid.querySelectorAll(".location-card").forEach((card) => {
-      const show = filter === "All" || card.getAttribute("data-village") === filter;
-      card.hidden = !show;
-    });
-  });
-}
-
-function renderSeasonGrid() {
-  const grid = document.querySelector("[data-season-grid]");
-  if (!grid) return;
-
-  grid.innerHTML = marketData.seasons
-    .map((season) => `
-      <article class="question-card">
-        <p class="eyebrow">Timing</p>
-        <h3>${season.name}</h3>
-        <p>${season.note}</p>
-        <ul>
-          ${season.questions.map((question) => `<li>${question}</li>`).join("")}
-        </ul>
-      </article>
-    `)
-    .join("");
-}
-
-function initMapper() {
-  const form = document.querySelector("[data-mapper-form]");
-  const output = document.querySelector("[data-mapper-output]");
-  const notice = document.querySelector("[data-notice-output]");
-  if (!form || !output || !notice) return;
+function initMarketForm() {
+  const form = document.querySelector("[data-market-form]");
+  const output = document.querySelector("[data-market-output]");
+  const record = document.querySelector("[data-record-output]");
+  if (!form || !output || !record) return;
 
   const locationSelect = form.querySelector("[name='location']");
   const seasonSelect = form.querySelector("[name='season']");
+  const newLocationFields = form.querySelector("[data-new-location-fields]");
+  const recordInput = form.querySelector("[data-onboarding-record-input]");
+  const recordFilenameInput = form.querySelector("[data-onboarding-record-filename]");
 
   locationSelect.innerHTML = marketData.locations
     .map((location) => `<option value="${location.id}">${location.name}</option>`)
-    .join("");
+    .join("") + `<option value="${CUSTOM_LOCATION_ID}">Add a new market, venue or event</option>`;
 
   seasonSelect.innerHTML = marketData.seasons
     .map((season) => `<option value="${season.name}">${season.name}</option>`)
     .join("");
 
-  function renderMapper() {
+  function render() {
     const values = Object.fromEntries(new FormData(form).entries());
-    const location = marketData.locations.find((item) => item.id === values.location) || marketData.locations[0];
-    const season = marketData.seasons.find((item) => item.name === values.season) || marketData.seasons[0];
+    const needs = checkedValues(form, "siteNeeds");
+    const location = currentLocation(values);
+    const season = marketData.seasons.find((item) => item.name === values.season) || marketData.seasons[0] || {};
 
-    const sharedTableQuestions = values.food === "yes" || values.marketShape.includes("shared")
-      ? marketData.universalQuestions.sharedTable.slice(0, 2)
-      : [];
+    if (newLocationFields) {
+      newLocationFields.hidden = values.location !== CUSTOM_LOCATION_ID;
+    }
 
-    const selectedQuestions = [
-      ...location.questions.slice(0, 3),
-      ...season.questions.slice(0, 2),
-      ...sharedTableQuestions,
-      marketData.universalQuestions.transport[1],
-      marketData.universalQuestions.noticeboard[1]
-    ];
-
-    const attention = [];
-    if (values.projection === "unknown") attention.push("Projection is unknown. Start with surface, permission, brightness and power.");
-    if (values.transport === "late-risk") attention.push("Transport has a late-return risk. Map last boats, buses and safe movement before promotion.");
-    if (values.localConsent === "pending-contact") attention.push("Local contact is pending. Keep the next step as host review and question gathering.");
-    if (values.food === "yes") attention.push("Food stalls need food-safety and host-compliance questions before public copy.");
-    if (attention.length === 0) attention.push("The idea has a starter shape, but it still needs host confirmation and source checks.");
+    const publicContact = clean(values.publicContact, values.publicPermission === "yes, name and public contact are ok" ? clean(values.followUpContact) : "to confirm");
+    const publicListing = values.publicPermission === "keep private for now"
+      ? "Keep private for now."
+      : `${clean(values.displayName, "Name to confirm")} - ${clean(values.offerSummary, "Offer to confirm")} Contact: ${publicContact}.`;
 
     output.innerHTML = `
       <div class="mapper-result-head">
-        <p class="eyebrow">Draft question pack</p>
-        <h3>${location.name}</h3>
-        <p>${season.name}: ${season.note}</p>
+        <p class="eyebrow">Application summary</p>
+        <h3>${escapeHtml(clean(values.displayName, "New applicant or idea"))}</h3>
+        <p>${escapeHtml(values.intent)} for ${escapeHtml(location.name || "market to confirm")}.</p>
       </div>
       <div class="mini-grid">
-        <div><strong>Contributor role</strong><span>${values.contributorRole}</span></div>
-        <div><strong>Market shape</strong><span>${values.marketShape}</span></div>
-        <div><strong>Projection status</strong><span>${values.projection}</span></div>
-        <div><strong>Transport signal</strong><span>${values.transport}</span></div>
-        <div><strong>Consent status</strong><span>${values.localConsent}</span></div>
+        <div><strong>Type</strong><span>${escapeHtml(values.participantType)}</span></div>
+        <div><strong>Category</strong><span>${escapeHtml(values.category)}</span></div>
+        <div><strong>Market</strong><span>${escapeHtml(location.name || "to confirm")}</span></div>
+        <div><strong>Date/window</strong><span>${escapeHtml(clean(values.availability, season.name || "to confirm"))}</span></div>
+        <div><strong>Stall size</strong><span>${escapeHtml(values.stallSize)}</span></div>
+        <div><strong>Insurance</strong><span>${escapeHtml(values.insurance)}</span></div>
       </div>
-      <h4>Ask next</h4>
-      <ol>${selectedQuestions.map((question) => `<li>${question}</li>`).join("")}</ol>
-      <h4>Care notes</h4>
-      <ul>${attention.map((item) => `<li>${item}</li>`).join("")}</ul>
+      <div class="record-sections">
+        ${summaryCard("What they offer", values.offerSummary, "Offer details still needed.")}
+        ${summaryCard("Photos, socials or proof links", values.proofLinks, "Product photos, social links or stall images still needed.")}
+        ${summaryCard("Stall layout", values.stallLayout, "Layout details still needed.")}
+        ${summaryCard("Onsite needs", needs.join(", "), "No needs selected yet.")}
+        ${summaryCard("Setup and pack-down", values.setupNotes, "Setup details still needed.")}
+        ${summaryCard("Food or safety checks", [values.foodCheck, values.foodSafetyNotes].filter(Boolean).join(". "), "Food and safety checks not relevant or still needed.")}
+        ${summaryCard("Venue, organiser or local idea", values.venueIdea, "No venue or idea notes added.")}
+        ${summaryCard("Visitor information", values.visitorInfo, "Visitor FAQ still needed.")}
+        ${summaryCard("Review before publishing", values.reviewNotes, "No review notes added yet.")}
+        ${summaryCard("Public listing draft", publicListing, "Nothing public yet.")}
+      </div>
     `;
 
-    const sharedTableLine = values.food === "yes" || values.marketShape.includes("shared")
-      ? "shared_table_layer: possible, requires food safety and place mapping"
-      : "shared_table_layer: optional layer pending";
-
-    const noticeText = `---
-title: Possible night market test - ${location.name}
-status: question gathering only
-location: ${location.name}
-village: ${location.village}
-season_window: ${season.name}
-contributor_role: ${values.contributorRole}
-market_shape: ${values.marketShape}
-projection_status: ${values.projection}
-transport_status: ${values.transport}
-${sharedTableLine}
-public_boundary: host review and source checking required
-simulation_seed: transport, projection, stall mix, crowd comfort, weather and last-return questions
-news_network_fit: possible gig guide, weekend wrap or ferry-screen update after host confirmation
+    record.value = `---
+record_type: market_onboarding
+intent: ${values.intent}
+participant_type: ${values.participantType}
+name_or_group: ${clean(values.displayName)}
+private_follow_up_contact: ${clean(values.followUpContact)}
+public_permission: ${values.publicPermission}
+public_contact: ${publicContact}
+preferred_market_or_event: ${location.name || "to confirm"}
+area: ${location.village || "to confirm"}
+date_or_availability: ${clean(values.availability, season.name || "to confirm")}
+category: ${values.category}
+stall_size: ${values.stallSize}
+site_needs: ${needs.length ? needs.join(", ") : "to confirm"}
+insurance: ${values.insurance}
+food_check: ${values.foodCheck}
+next_step: ${values.nextStep}
+public_boundary: organiser review before promotion
 ---
 
-## Public draft
+# Market Onboarding Record
 
-A possible Straddie night market or twilight stall pattern is being mapped for ${location.name}. The draft contributor role is ${values.contributorRole}. The current task is to ask good questions about venue fit, transport, projection, stallholder interest, Shared Table fit, local benefit and cultural care.
+## Applicant
 
-## Questions open now
+- Name, business or group: ${clean(values.displayName)}
+- Applying to: ${values.intent}
+- Participant type: ${values.participantType}
+- Follow-up contact: ${clean(values.followUpContact)}
+- Public listing permission: ${values.publicPermission}
+- Public contact: ${publicContact}
 
-${selectedQuestions.map((question) => `- ${question}`).join("\n")}
+## Preferred Market Or Event
 
-## Verification needed
+- Market, venue or event: ${location.name || "to confirm"}
+- Area: ${location.village || "to confirm"}
+- Date, season or availability: ${clean(values.availability, season.name || "to confirm")}
 
-- Host or organiser review
-- Stallholder contact
-- Ferry and bus timing
-- Projection safety
-- Shared Table food and place checks, if used
-- Simulation assumptions for any future planning model
-- News-network wording after host confirmation
-- Public notice expiry date
+## Stall Or Offer
+
+${clean(values.offerSummary, "To confirm.")}
+
+- Category: ${values.category}
+- Stall size: ${values.stallSize}
+- Site needs: ${needs.length ? needs.join(", ") : "to confirm"}
+
+## Photos, Socials Or Proof Links
+
+${clean(values.proofLinks, "To confirm.")}
+
+## Stall Layout
+
+${clean(values.stallLayout, "To confirm.")}
+
+## Setup And Pack-down
+
+${clean(values.setupNotes, "To confirm.")}
+
+## Required Checks
+
+- Public liability insurance: ${values.insurance}
+- Food licence or food safety: ${values.foodCheck}
+- Food, gas or electrical notes: ${clean(values.foodSafetyNotes, "Not relevant or to confirm.")}
+
+## Venue, Organiser Or Local Idea
+
+${clean(values.venueIdea, "Not relevant or to confirm.")}
+
+## Visitor Information
+
+${clean(values.visitorInfo, "To confirm.")}
+
+## Review Before Publishing
+
+${clean(values.reviewNotes, "To confirm.")}
+
+## Public Listing Draft
+
+${publicListing}
+
+## Next Step
+
+${values.nextStep}
+
+## Private Follow-up Notes
+
+${clean(values.followUpNotes, "To confirm.")}
 `;
 
-    notice.value = noticeText;
+    const fileBase = slugify(`${clean(values.displayName, "market-onboarding")} ${clean(location.name, "")}`);
+    record.dataset.filename = `${fileBase}.md`;
+    if (recordInput) recordInput.value = record.value;
+    if (recordFilenameInput) recordFilenameInput.value = record.dataset.filename;
+
   }
 
-  form.addEventListener("input", renderMapper);
+  form.addEventListener("input", render);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    renderMapper();
+    render();
   });
 
-  renderMapper();
+  render();
 }
 
-function initCopyButtons() {
-  document.querySelectorAll("[data-copy-target]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const selector = button.getAttribute("data-copy-target");
-      const target = selector ? document.querySelector(selector) : null;
-      if (!target) return;
+function ensureHiddenFrame(frameName, title) {
+  let frame = document.querySelector(`iframe[name="${frameName}"]`);
+  if (!frame) {
+    frame = document.createElement("iframe");
+    frame.name = frameName;
+    frame.title = title;
+    frame.className = "hidden-frame";
+    document.body.appendChild(frame);
+  }
+  return frame;
+}
 
-      try {
-        await navigator.clipboard.writeText(target.value || target.textContent || "");
-        button.textContent = "Copied";
-      } catch {
-        button.textContent = "Select text to copy";
-      }
+function initRecordActions() {
+  document.querySelectorAll("[data-download-record]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const record = document.querySelector("[data-record-output]");
+      if (!record) return;
+
+      const blob = new Blob([record.value || ""], { type: "text/markdown;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = record.dataset.filename || "market-onboarding-record.md";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
     });
   });
 }
 
-renderLocationGrids();
-renderSeasonGrid();
-initFilters();
-initMapper();
-initCopyButtons();
+function initOnboardingSubmission() {
+  const form = document.querySelector("[data-market-form]");
+  const record = document.querySelector("[data-record-output]");
+  const submitButton = document.querySelector("[data-submit-onboarding]");
+  const status = document.querySelector("[data-onboarding-status]");
+  if (!form || !submitButton) return;
 
+  const setStatus = (message) => {
+    if (status) status.textContent = message;
+  };
+
+  if (!ONBOARDING_SCRIPT_URL) {
+    submitButton.disabled = true;
+    setStatus("Onboarding endpoint pending. Deploy apps-script/onboarding-form.gs, then paste the Web App URL into ONBOARDING_SCRIPT_URL in app.js.");
+    return;
+  }
+
+  const frameName = "onboarding-submit-frame";
+  const frame = ensureHiddenFrame(frameName, "Onboarding form submission");
+  let sent = false;
+
+  frame.addEventListener("load", () => {
+    if (!sent) return;
+    sent = false;
+    setStatus("Onboarding record sent. Thanks.");
+  });
+
+  form.action = ONBOARDING_SCRIPT_URL;
+  form.method = "post";
+  form.target = frameName;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (record && form.querySelector("[data-onboarding-record-input]")) {
+      form.querySelector("[data-onboarding-record-input]").value = record.value || "";
+    }
+    sent = true;
+    setStatus("Sending onboarding record...");
+    HTMLFormElement.prototype.submit.call(form);
+  });
+}
+
+function initContactForm() {
+  const form = document.querySelector("[data-contact-form]");
+  if (!form) return;
+
+  const status = form.querySelector("[data-contact-status]");
+  const submitButton = form.querySelector("button[type='submit']");
+
+  const setStatus = (message) => {
+    if (status) status.textContent = message;
+  };
+
+  if (!CONTACT_SCRIPT_URL) {
+    if (submitButton) submitButton.disabled = true;
+    setStatus("Contact form endpoint pending. Add the deployed Apps Script Web App URL in app.js to enable one-click sending.");
+    return;
+  }
+
+  const frameName = "contact-submit-frame";
+  const frame = ensureHiddenFrame(frameName, "Contact form submission");
+
+  let sent = false;
+  frame.addEventListener("load", () => {
+    if (!sent) return;
+    sent = false;
+    form.reset();
+    setStatus("Message sent. Thanks.");
+  });
+
+  form.action = CONTACT_SCRIPT_URL;
+  form.target = frameName;
+
+  form.addEventListener("submit", () => {
+    sent = true;
+    setStatus("Sending...");
+  });
+}
+
+initMarketForm();
+initRecordActions();
+initOnboardingSubmission();
+initContactForm();

@@ -1,8 +1,8 @@
 ﻿# Straddie Market Onboarding
 
-A dark-mode Strange But True style static repo for community market onboarding on Straddie.
+A dark-mode static repo for community market onboarding on Straddie.
 
-The site asks the questions needed to help hosts, stallholders, artists, visitors, transport partners and noticeboard helpers participate in a host-led location, season or existing event.
+The site collects common onboarding details for stallholders, artists, food providers, venues, organisers, helpers and local market ideas.
 
 ## Open Locally
 
@@ -21,36 +21,35 @@ http://localhost:4196
 ## Pages
 
 - `index.html` - community doorway and role-based onboarding.
-- `locations.html` - candidate locations and seasonal fit.
-- `mapper.html` - interactive question mapper for any new venue or event.
-- `shared-table.html` - Shared Table and Sovereign Space Builder bridge.
-- `transport.html` - SeaLink, Gold Cats, buses and visitor-flow questions.
+- `mapper.html` - market onboarding form for applications, offers, host spaces and local ideas.
+- `transport.html` - current public ferry/bus timetable snapshots, routes, passenger-capacity fields, service-alert links, disruption questions, taxis and private transfers.
 - `noticeboard.html` - bridge to the Straddie Noticeboard Network.
-- `future-network.html` - AI, simulation, noticeboard and hyperlocal news integration.
-- `research.html` - quick research scan with source links.
+- `future-network.html` - connected notice, media, grant, resilience and community infrastructure links.
+- `research.html` - registration contact, source checks and onboarding link.
 
 ## Why This Exists
 
-The working idea is a customisable participation pattern:
+The working idea is a shared market intake flow:
 
-1. Start with a suggested location or event.
-2. Ask the right questions before making claims.
-3. Map visitor flow, ferries, buses, parking, last-boat risk and local capacity.
-4. Attach the Shared Table and Sovereign Space Builder layer where food, surplus, prep spaces or place evidence are relevant.
-5. Check power, projection surfaces, weather, light spill, noise and cultural care.
-6. Use the Straddie Noticeboard Network to collect, verify and distribute public-safe information.
-7. Keep AI and simulation work as planning support: question packs, assumptions, scenario seeds and news-network routing.
+1. Let people register interest, apply for a stall, offer food, suggest a venue or add a market idea.
+2. Collect the details organisers usually need: contact, offer, photos/socials, stall layout, site needs, insurance, food checks and availability.
+3. Keep private follow-up details separate from public listing details.
+4. Check transport timetables, passenger capacity, taxis, private transfers, parking, toilets, accessibility, weather and visitor FAQ before promotion.
+5. Use the Straddie Noticeboard Network to distribute reviewed public information.
 
-Host organisations and existing organisers set the frame. Contributors can then join as stallholders, artists, projection helpers, Shared Table helpers, media helpers, data helpers or visitors.
+Host organisations and existing organisers still set the frame. The onboarding form helps locals and partners provide useful, reviewable market data in one place.
 
 ## Source Notes
 
 The site draws on:
 
 - Current web research into Point Lookout Markets, venue pages, island event listings, ferry/transport pages and arts/culture event examples.
-- Local source documents from the Downloads and processed markdown folders, including Shared Table, Island Resilience, Strange But True business planning, co-op, Minjerribah research, event simulation, Sovereign Space Builder and Straddie media-network documents.
-- Associated public sites: Ready S.E.T. Co-op + Hyperlocal Media and Stradbroke Grants Lab entities.
+- Local source documents from the Downloads and processed markdown folders, including Island Resilience, business planning notes, co-op, Minjerribah research, event simulation and Straddie media-network documents.
+- Associated public sites: Strange But True, Ready S.E.T. Co-op + Hyperlocal Media and Stradbroke Grants Lab entities.
 
 See `docs/research-notes.md` for the detailed scan.
 See `docs/ai-simulation-noticeboard-network.md` for the AI and simulation integration note.
+See `docs/official-timetable-update-guide.md` before editing transport timetables or service-alert links.
+See `docs/contact-form-apps-script.md` before enabling the Research contact form and its private Google Sheet log.
+See `docs/onboarding-form-apps-script.md` before enabling the Onboarding form and its private Google Sheet log.
 

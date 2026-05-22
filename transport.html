@@ -1,14 +1,14 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-AU">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Transport and visitor-flow question map for Straddie market participation.">
-    <title>Transport | Straddie Market Onboarding</title>
+    <meta name="description" content="Transport source layer for Straddie market planning, including ferry timetables, bus routes, passenger capacity fields, taxis, private transfers and backup questions.">
+    <title>Transport Data | Straddie Market Onboarding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260522-nav">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -18,10 +18,7 @@
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
         <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
-          <a href="pattern.html">Pattern</a>
-          <a href="locations.html">Locations</a>
-          <a href="mapper.html">Mapper</a>
-          <a href="shared-table.html">Shared Table</a>
+          <a href="mapper.html">Onboarding</a>
           <a href="transport.html" aria-current="page">Transport</a>
           <a href="noticeboard.html">Noticeboard</a>
           <a href="future-network.html">Future Network</a>
@@ -34,84 +31,481 @@
         <button class="back-button" type="button" data-back>Back</button>
         <a href="index.html">Home</a>
       </div>
+
       <section class="section compact split" aria-labelledby="transport-title">
         <div class="section-heading">
-          <p class="eyebrow">Visitor flow</p>
-          <h1 id="transport-title">Boat choices are part of the event design.</h1>
-          <p class="hero-lede">The useful partnership ask is simple: can SeaLink, Gold Cats / Stradbroke Flyer, buses and venues help map visitor flow so people choose the least stressful boat, bus, walking route and return window?</p>
+          <p class="eyebrow">Transport data layer</p>
+          <h1 id="transport-title">Transport data for market days.</h1>
+          <p class="hero-lede">Check ferries, buses, taxis, shuttles and late-return options before a market date is promoted. Travel details change, so public notices should link back to current operator sources.</p>
+          <div class="action-row">
+            <a class="button primary" href="mapper.html">Add market details</a>
+            <a class="button secondary" href="noticeboard.html">Check notices</a>
+            <a class="button secondary" href="research.html">Check sources</a>
+          </div>
         </div>
         <figure class="feature-image">
-          <img src="assets/strange-but-true-banner.webp" alt="Strange But True dark banner visual used as the style signal for transport and event mapping." width="1200" height="628">
+          <img src="assets/noticeboard-device-pipeline.webp" alt="Transport and market notices flowing across public screens, tablets and phones." width="1200" height="900">
         </figure>
       </section>
 
-      <section class="section compact" aria-labelledby="flow-title">
+      <section class="section compact" aria-labelledby="sources-title">
         <div class="section-heading">
-          <p class="eyebrow">Simple flow</p>
-          <h2 id="flow-title">The map starts before the market.</h2>
+          <p class="eyebrow">Current source layer</p>
+          <h2 id="sources-title">Timetables, capacity fields and booking links.</h2>
+          <p>Until a live feed exists, this page can show the current public timetable snapshot, routes, source link, time checked, event date, direction of travel and any capacity note that affects visitors.</p>
+          <nav class="anchor-nav" aria-label="Timetable quick links">
+            <a href="#sealink-vehicle-timetable">SeaLink vehicle ferry</a>
+            <a href="#sealink-passenger-timetable">SeaLink passenger ferry</a>
+            <a href="#flyer-timetable">Stradbroke Flyer</a>
+            <a href="#bus-routes-timetable">Bus routes 880 and 881</a>
+          </nav>
         </div>
-        <div class="transport-map">
-          <article class="transport-node">
-            <h3>Cleveland</h3>
-            <p>Visitors choose SeaLink, Gold Cats / Stradbroke Flyer, vehicle ferry, train connection, shuttle or private car.</p>
+        <div class="source-grid">
+          <article class="source-card">
+            <h3>SeaLink vehicle ferry</h3>
+            <p>Cleveland to Dunwich vehicle ferry. Base timetable plus extra services can change, so the event record links to the booking page and service status.</p>
+            <div class="mini-grid">
+              <div><strong>Known capacity</strong><span>Minjerribah: 52 cars / 400 passengers. Sea Breeze: 60 cars / 300 passengers. Quandamooka: 52 cars / 400 passengers.</span></div>
+              <div><strong>Questions</strong><span>Which departures are open, which vessel is scheduled, are vehicle spaces available, and are there service alerts?</span></div>
+            </div>
+            <div class="source-row" aria-label="SeaLink source links">
+              <a href="https://www.sealink.com.au/north-stradbroke-island/ferry-information/timetable/" target="_blank" rel="noopener noreferrer">SeaLink timetable</a>
+              <a href="https://www.sealink.com.au/north-stradbroke-island/status" target="_blank" rel="noopener noreferrer">SeaLink status</a>
+              <a href="https://www.sealink.com.au/north-stradbroke-island/ferry-information/sealink-seq-ferries/" target="_blank" rel="noopener noreferrer">SeaLink fleet</a>
+            </div>
           </article>
-          <div class="path-arrow">Ask: which boat fits the event?</div>
-          <article class="transport-node">
-            <h3>Dunwich</h3>
-            <p>Arrival point affects buses, walking, courtesy vehicles, car movement, first notices and last return.</p>
+          <article class="source-card">
+            <h3>SeaLink passenger ferry</h3>
+            <p>Daily passenger ferry from Cleveland to Dunwich, with local bus connections at Dunwich. Useful for market visitors travelling without a car.</p>
+            <div class="mini-grid">
+              <div><strong>Known capacity</strong><span>Yalingbila: 198 passengers. Any changed vessel needs operator confirmation.</span></div>
+              <div><strong>Questions</strong><span>Which passenger ferry is next, is it running, which bus connects, and what is the last return?</span></div>
+            </div>
+            <div class="source-row" aria-label="SeaLink passenger ferry source links">
+              <a href="https://www.sealink.com.au/north-stradbroke-island/ferry-information/timetable/" target="_blank" rel="noopener noreferrer">Passenger timetable</a>
+              <a href="https://www.sealink.com.au/north-stradbroke-island/status" target="_blank" rel="noopener noreferrer">Passenger ferry status</a>
+              <a href="https://www.sealink.com.au/north-stradbroke-island/ferry-information/sealink-seq-ferries/" target="_blank" rel="noopener noreferrer">Passenger vessel details</a>
+            </div>
           </article>
-          <div class="path-arrow">Ask: where do people go next?</div>
-          <article class="transport-node">
-            <h3>Venue</h3>
-            <p>Point Lookout, Amity or Dunwich each need different parking, bus, taxi, pack-down and local-neighbour questions.</p>
+          <article class="source-card">
+            <h3>Stradbroke Flyer Gold Cats</h3>
+            <p>Passenger ferry between Cleveland and One Mile. The public page points visitors to daily travel, tickets on the day and the mainland courtesy bus.</p>
+            <div class="mini-grid">
+              <div><strong>Capacity status</strong><span>Boat passenger limit needs operator confirmation before live crowd estimates are shown.</span></div>
+              <div><strong>Questions</strong><span>Which water taxi times are current, which trips have no connecting bus, and what is the backup if a queue forms?</span></div>
+            </div>
+            <div class="source-row" aria-label="Stradbroke Flyer source links">
+              <a href="https://www.flyer.com.au/timetable" target="_blank" rel="noopener noreferrer">Flyer timetable</a>
+              <a href="https://www.flyer.com.au/onboard-our-boats" target="_blank" rel="noopener noreferrer">Onboard boats</a>
+            </div>
           </article>
-          <div class="path-arrow">Ask: how do they leave well?</div>
+          <article class="source-card">
+            <h3>Stradbroke Island Buses</h3>
+            <p>Routes 880 and 881 connect Dunwich, Point Lookout, Amity Point and the bus interchange. Charter capacity is also relevant for larger event movements.</p>
+            <div class="mini-grid">
+              <div><strong>Known capacity</strong><span>Charter fleet is listed at 40 to 62 seats. Route-service passenger limits need the actual vehicle allocation.</span></div>
+              <div><strong>Questions</strong><span>Which route, stop and time fit the event, and what changes if a bus is full or delayed?</span></div>
+            </div>
+            <div class="source-row" aria-label="Bus source links">
+              <a href="https://www.stradbrokebus.com.au/timetablesandtickets" target="_blank" rel="noopener noreferrer">Bus timetable</a>
+              <a href="https://www.stradbrokebus.com.au/route-map" target="_blank" rel="noopener noreferrer">Route map</a>
+              <a href="https://www.stradbrokebus.com.au/charter" target="_blank" rel="noopener noreferrer">Charter capacity</a>
+            </div>
+          </article>
+          <article class="source-card">
+            <h3>Taxis and local cabs</h3>
+            <p>Stradbroke Cab Service is useful for late-night, accessible and door-to-door movement when visitors need a confirmed fallback.</p>
+            <div class="mini-grid">
+              <div><strong>Known capacity</strong><span>Public listing says 2 x 10-seat commuter vans, with one wheelchair-accessible vehicle.</span></div>
+              <div><strong>Questions</strong><span>How many seats are available, is the accessible van available, and what booking lead time is needed?</span></div>
+            </div>
+            <div class="source-row" aria-label="Taxi source links">
+              <a href="https://stradbrokeisland.com/stradbroke-cab-service/" target="_blank" rel="noopener noreferrer">Cab service listing</a>
+            </div>
+          </article>
+          <article class="source-card">
+            <h3>StradEasy and private transfers</h3>
+            <p>Private booked hire and ferry-to-door transport can help visitors move from Dunwich or One Mile to Point Lookout, Amity, accommodation, tracks and event sites.</p>
+            <div class="mini-grid">
+              <div><strong>Known capacity</strong><span>Public listing says vehicles seat up to 11 passengers. Live estimates still need booking and vehicle confirmation.</span></div>
+              <div><strong>Questions</strong><span>Is a booking required, where is pickup, how many seats are open, and can the service meet first or last boats?</span></div>
+            </div>
+            <div class="source-row" aria-label="StradEasy source links">
+              <a href="https://stradeasy.com.au/" target="_blank" rel="noopener noreferrer">StradEasy</a>
+              <a href="https://stradbrokeisland.com/stradeasy-north-stradbroke-island-transport-bus-service/" target="_blank" rel="noopener noreferrer">Visitor listing</a>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="partner-questions-title">
+      <section class="section compact" aria-labelledby="published-title">
         <div class="section-heading">
-          <p class="eyebrow">Partnership questions</p>
-          <h2 id="partner-questions-title">What to ask SeaLink and Gold Cats.</h2>
-          <p>The aim is aggregate planning information, better public guidance and lighter pressure on venues.</p>
+          <p class="eyebrow">Current public timetables</p>
+          <h2 id="published-title">A snapshot to show until live data exists.</h2>
+          <p>Checked 11 May 2026. These are public timetable snapshots for planning and visitor FAQ. Operators can change services, so the source links stay visible beside the data.</p>
+        </div>
+        <div class="table-stack">
+          <article class="panel timetable-block">
+            <h3 id="sealink-vehicle-timetable">SeaLink vehicle ferry base timetable</h3>
+            <p>Route: Cleveland SeaLink terminal to Junner Street, Dunwich. Trip time is listed at 45-50 minutes. M = Minjerribah, SB = Sea Breeze. Extra services may use Quandamooka.</p>
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Cleveland to Dunwich</th>
+                    <th scope="col">Dunwich to Cleveland</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>6:00am M, Monday-Saturday only</td><td>7:00am M, Monday-Saturday only</td></tr>
+                  <tr><td>7:00am SB</td><td>8:00am SB</td></tr>
+                  <tr><td>8:00am M</td><td>9:00am M</td></tr>
+                  <tr><td>9:30am SB</td><td>10:30am SB</td></tr>
+                  <tr><td>10:30am M</td><td>11:30am M</td></tr>
+                  <tr><td>12:00pm SB</td><td>1:00pm SB</td></tr>
+                  <tr><td>1:00pm M</td><td>2:00pm M</td></tr>
+                  <tr><td>2:00pm SB</td><td>3:00pm SB</td></tr>
+                  <tr><td>3:30pm M</td><td>4:30pm M</td></tr>
+                  <tr><td>4:30pm SB</td><td>5:30pm SB</td></tr>
+                  <tr><td>6:00pm M, Sunday only</td><td>7:00pm M, Sunday only</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel timetable-block">
+            <h3 id="sealink-passenger-timetable">SeaLink passenger ferry timetable</h3>
+            <p>Route: Cleveland to Junner Street, Dunwich. Trip time is listed at about 25 minutes. The 8:15pm / 8:45pm service is Friday, Saturday and Sunday only.</p>
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Cleveland to Dunwich</th>
+                    <th scope="col">Dunwich to Cleveland</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>4:45am</td><td>5:15am</td></tr>
+                  <tr><td>5:45am</td><td>6:15am</td></tr>
+                  <tr><td>6:45am</td><td>7:15am</td></tr>
+                  <tr><td>7:45am</td><td>8:15am</td></tr>
+                  <tr><td>9:00am</td><td>9:30am</td></tr>
+                  <tr><td>10:15am</td><td>10:45am</td></tr>
+                  <tr><td>11:30am</td><td>12:00pm</td></tr>
+                  <tr><td>12:45pm</td><td>1:15pm</td></tr>
+                  <tr><td>2:00pm</td><td>2:30pm</td></tr>
+                  <tr><td>3:30pm</td><td>4:15pm</td></tr>
+                  <tr><td>5:00pm</td><td>5:30pm</td></tr>
+                  <tr><td>6:15pm</td><td>6:45pm</td></tr>
+                  <tr><td>7:15pm</td><td>7:45pm</td></tr>
+                  <tr><td>8:15pm, Friday-Sunday only</td><td>8:45pm, Friday-Sunday only</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel timetable-block">
+            <h3 id="flyer-timetable">Stradbroke Flyer Gold Cats timetable</h3>
+            <p>Route: Cleveland / Toondah Harbour to One Mile Jetty, Dunwich. The text snapshot below comes from a public Visit Stradbroke/Ray White listing; check the Flyer page before travel.</p>
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Cleveland to One Mile</th>
+                    <th scope="col">One Mile to Cleveland</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>4:55am, no connecting bus listed</td><td>5:25am, no connecting bus listed</td></tr>
+                  <tr><td>5:55am, no connecting bus listed</td><td>6:25am</td></tr>
+                  <tr><td>6:55am</td><td>7:25am</td></tr>
+                  <tr><td>7:55am</td><td>8:25am</td></tr>
+                  <tr><td>8:55am</td><td>9:25am</td></tr>
+                  <tr><td>9:55am</td><td>10:25am</td></tr>
+                  <tr><td>10:55am</td><td>11:25am</td></tr>
+                  <tr><td>11:55am</td><td>12:25pm</td></tr>
+                  <tr><td>12:55pm</td><td>1:25pm</td></tr>
+                  <tr><td>1:55pm</td><td>2:25pm</td></tr>
+                  <tr><td>3:25pm</td><td>3:55pm</td></tr>
+                  <tr><td>4:25pm</td><td>4:55pm</td></tr>
+                  <tr><td>5:25pm</td><td>5:55pm</td></tr>
+                  <tr><td>6:25pm</td><td>6:55pm</td></tr>
+                  <tr><td>7:25pm, no connecting bus listed</td><td>7:55pm, no connecting bus listed</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel timetable-block">
+            <h3 id="bus-routes-timetable">Island bus routes and key times</h3>
+            <p>Official Translink timetable snapshot. Effective from 1 December 2025, printed December 2025. Times are approximate and Translink asks passengers to be at the stop at least five minutes before departure.</p>
+            <div class="source-row" aria-label="Official Translink timetable links">
+              <a href="https://translink.com.au/sites/default/files/acquiadam-assets/timetables/251201-880-881.pdf" target="_blank" rel="noopener noreferrer">Official Translink PDF</a>
+              <a href="https://jp.translink.com.au/plan-your-journey/timetables/bus/F/880" target="_blank" rel="noopener noreferrer">Route 880 live page</a>
+              <a href="https://jp.translink.com.au/plan-your-journey/timetables/bus/F/881" target="_blank" rel="noopener noreferrer">Route 881 live page</a>
+            </div>
+            <div class="table-scroll">
+              <table class="data-table official-bus">
+                <caption>Route 880 - Dunwich to Point Lookout - Monday to Sunday*</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Timing point</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Junner Street Ferry Terminal</th><td>6.15</td><td>7.15</td><td>A7.20</td><td>8.15</td><td>A8.20</td><td>-</td><td>9.30</td><td>-</td><td>10.45</td><td>-</td><td>12.00</td><td>1.15</td><td>2.30</td><td>4.00</td><td>5.30</td><td>6.45</td><td>7.45</td></tr>
+                  <tr><th scope="row">One Mile Ferry Terminal</th><td>6.22</td><td>7.22</td><td>A7.27</td><td>8.22</td><td>A8.27</td><td>A9.30</td><td>9.37</td><td>A10.45</td><td>10.52</td><td>A12.00</td><td>12.07</td><td>1.22</td><td>2.37</td><td>4.07</td><td>5.37</td><td>6.52</td><td>7.52</td></tr>
+                  <tr><th scope="row">Amity Point turnoff</th><td>6.38</td><td>7.38</td><td>A7.43</td><td>8.38</td><td>A8.43</td><td>A9.46</td><td>9.53</td><td>A11.01</td><td>11.08</td><td>A12.16</td><td>12.23</td><td>1.38</td><td>2.53</td><td>4.23</td><td>5.53</td><td>7.08</td><td>8.08</td></tr>
+                  <tr><th scope="row">Point Lookout - Adder Rock</th><td>6.48</td><td>7.48</td><td>A7.53</td><td>8.48</td><td>A8.53</td><td>A9.56</td><td>10.03</td><td>A11.11</td><td>11.18</td><td>A12.26</td><td>12.33</td><td>1.48</td><td>3.03</td><td>4.33</td><td>6.03</td><td>7.18</td><td>8.18</td></tr>
+                  <tr><th scope="row">Point Lookout - Cylinder Beach</th><td>6.54</td><td>7.54</td><td>A7.59</td><td>8.54</td><td>A8.59</td><td>A10.02</td><td>10.09</td><td>A11.17</td><td>11.24</td><td>A12.32</td><td>12.39</td><td>1.54</td><td>3.09</td><td>4.39</td><td>6.09</td><td>7.24</td><td>8.24</td></tr>
+                  <tr><th scope="row">Point Lookout - Gorge Walk</th><td>6.58</td><td>7.58</td><td>A8.03</td><td>8.58</td><td>A9.03</td><td>A10.06</td><td>10.13</td><td>A11.21</td><td>11.28</td><td>A12.36</td><td>12.43</td><td>1.58</td><td>3.13</td><td>4.43</td><td>6.13</td><td>7.28</td><td>8.28</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-scroll">
+              <table class="data-table official-bus">
+                <caption>Route 880 - Point Lookout to Dunwich - Monday to Sunday*</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Timing point</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Point Lookout - Gorge Walk</th><td>6.30</td><td>7.30</td><td>8.45</td><td>10.00</td><td>11.15</td><td>12.30</td><td>A1.40</td><td>1.45</td><td>A3.20</td><td>A3.25</td><td>3.30</td><td>A4.40</td><td>4.45</td><td>A5.55</td><td>6.00</td><td>7.00</td><td>8.00</td></tr>
+                  <tr><th scope="row">Point Lookout - Cylinder Beach</th><td>6.34</td><td>7.34</td><td>8.49</td><td>10.04</td><td>11.19</td><td>12.34</td><td>A1.44</td><td>1.49</td><td>A3.24</td><td>A3.29</td><td>3.34</td><td>A4.44</td><td>4.49</td><td>A5.59</td><td>6.04</td><td>7.04</td><td>8.04</td></tr>
+                  <tr><th scope="row">Point Lookout - Adder Rock</th><td>6.40</td><td>7.40</td><td>8.55</td><td>10.10</td><td>11.25</td><td>12.40</td><td>A1.50</td><td>1.55</td><td>A3.30</td><td>A3.35</td><td>3.40</td><td>A4.50</td><td>4.55</td><td>A6.05</td><td>6.10</td><td>7.10</td><td>8.10</td></tr>
+                  <tr><th scope="row">Amity Point turnoff</th><td>6.50</td><td>7.50</td><td>9.05</td><td>10.20</td><td>11.35</td><td>12.50</td><td>A2.00</td><td>2.05</td><td>A3.40</td><td>A3.45</td><td>3.50</td><td>A5.00</td><td>5.05</td><td>A6.15</td><td>6.20</td><td>7.20</td><td>8.20</td></tr>
+                  <tr><th scope="row">One Mile Ferry Terminal</th><td>7.03</td><td>8.03</td><td>9.18</td><td>10.33</td><td>11.48</td><td>1.03</td><td>A2.13</td><td>2.18</td><td>A3.53</td><td>A3.58</td><td>4.03</td><td>A5.13</td><td>5.18</td><td>A6.28</td><td>6.33</td><td>7.33</td><td>8.33</td></tr>
+                  <tr><th scope="row">Junner Street Ferry Terminal</th><td>7.09</td><td>8.09</td><td>9.24</td><td>10.39</td><td>11.54</td><td>1.09</td><td>A2.19</td><td>2.24</td><td>A3.59</td><td>A4.04</td><td>4.09</td><td>A5.19</td><td>5.24</td><td>A6.34</td><td>6.39</td><td>7.39</td><td>8.39</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-scroll">
+              <table class="data-table official-bus route-881">
+                <caption>Route 881 - Dunwich to Amity Point - Monday to Sunday*</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Timing point</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">One Mile Ferry Terminal</th><td>8.15</td><td>9.30</td><td>12.00</td><td>1.15</td><td>2.30</td><td>4.00</td><td>5.25</td></tr>
+                  <tr><th scope="row">Junner Street Ferry Terminal</th><td>8.21</td><td>9.36</td><td>12.06</td><td>1.21</td><td>2.36</td><td>4.06</td><td>5.31</td></tr>
+                  <tr><th scope="row">QUAMPI</th><td>8.25</td><td>9.40</td><td>12.10</td><td>1.25</td><td>2.40</td><td>4.10</td><td>5.35</td></tr>
+                  <tr><th scope="row">Amity Point turnoff</th><td>8.39</td><td>9.54</td><td>12.24</td><td>1.39</td><td>2.54</td><td>4.24</td><td>5.49</td></tr>
+                  <tr><th scope="row">Amity Point</th><td>8.50</td><td>10.05</td><td>12.35</td><td>1.50</td><td>3.05</td><td>4.35</td><td>6.00</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-scroll">
+              <table class="data-table official-bus route-881">
+                <caption>Route 881 - Amity Point to Dunwich - Monday to Sunday*</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Timing point</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">am</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                    <th scope="col">pm</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Amity Point</th><td>6.35</td><td>7.35</td><td>8.50</td><td>10.05</td><td>11.20</td><td>12.35</td><td>1.50</td><td>4.45</td><td>6.05</td></tr>
+                  <tr><th scope="row">Amity Point turnoff</th><td>6.46</td><td>7.46</td><td>9.01</td><td>10.16</td><td>11.31</td><td>12.46</td><td>2.01</td><td>4.56</td><td>6.16</td></tr>
+                  <tr><th scope="row">QUAMPI</th><td>7.00</td><td>8.00</td><td>9.15</td><td>10.30</td><td>11.45</td><td>1.00</td><td>2.15</td><td>5.10</td><td>6.30</td></tr>
+                  <tr><th scope="row">Junner Street Ferry Terminal</th><td>7.04</td><td>8.04</td><td>9.19</td><td>10.34</td><td>11.49</td><td>1.04</td><td>2.19</td><td>5.14</td><td>6.34</td></tr>
+                  <tr><th scope="row">One Mile Ferry Terminal</th><td>7.10</td><td>8.10</td><td>9.25</td><td>10.40</td><td>11.55</td><td>1.10</td><td>2.25</td><td>5.20</td><td>6.40</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="timetable-note">A = operates on Saturday, Sunday, public holidays and all school holiday weekdays only. * Regular timetable operates on all gazetted public holidays except Christmas Day. A dash means the bus does not travel via that location. The official PDF includes the map and stop references.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="backup-title">
+        <div class="section-heading">
+          <p class="eyebrow">Disruption and backup checks</p>
+          <h2 id="backup-title">Questions for changed timetables, full services and weather.</h2>
+          <p>A useful transport page needs the normal timetable plus the backup path. These questions stop a listing from becoming stale the moment a boat, bus or weather window changes.</p>
         </div>
         <div class="grid three">
           <article class="question-card">
-            <h3>Before the event</h3>
+            <h3>Service alerts</h3>
             <ul>
-              <li>Which ferry windows are usually full during the target season?</li>
-              <li>Which arrivals connect cleanly with buses to Point Lookout or Amity?</li>
-              <li>Can a QR question help visitors choose day trip, overnight or local-only paths?</li>
+              <li>Has the SeaLink status page been checked today?</li>
+              <li>Has the bus service update page or Translink journey planner changed?</li>
+              <li>Has the Flyer office or timetable page changed today?</li>
             </ul>
           </article>
           <article class="question-card">
-            <h3>During the event</h3>
+            <h3>Late-return backup</h3>
             <ul>
-              <li>Can public notices suggest lower-pressure boat choices?</li>
-              <li>Can venue signs show last-return and bus reminders?</li>
-              <li>Can ferry terminals display only verified, non-hype market information?</li>
+              <li>What is the last realistic ferry and bus combination?</li>
+              <li>Which taxi, StradEasy or private shuttle option is actually available?</li>
+              <li>Who can update the listing if the last return changes?</li>
             </ul>
           </article>
           <article class="question-card">
-            <h3>After the event</h3>
+            <h3>Full-service backup</h3>
             <ul>
-              <li>What did visitors actually choose?</li>
-              <li>Where did flow feel too tight, late or confusing?</li>
-              <li>Which next market window would reduce pressure and support the host?</li>
+              <li>What advice is shown if a ferry, bus, taxi or shuttle is full?</li>
+              <li>Is there a lower-pressure arrival window?</li>
+              <li>Can visitors be pointed to overnight-stay or wait-and-return options?</li>
+            </ul>
+          </article>
+          <article class="question-card">
+            <h3>Weather backup</h3>
+            <ul>
+              <li>Which weather condition changes the market plan?</li>
+              <li>Does the host have a wet-weather location or cancellation cutoff?</li>
+              <li>Which message goes on the public page first?</li>
+            </ul>
+          </article>
+          <article class="question-card">
+            <h3>Operator contact</h3>
+            <ul>
+              <li>Who confirms extra services, charters or late transfer availability?</li>
+              <li>What details can be repeated publicly without creating confusion?</li>
+              <li>When was the answer last checked?</li>
+            </ul>
+          </article>
+          <article class="question-card">
+            <h3>Venue fallback</h3>
+            <ul>
+              <li>Can the venue hold people safely if a return service is delayed?</li>
+              <li>Is there seating, water, toilets and clear staff information?</li>
+              <li>What is the calmest visitor message?</li>
             </ul>
           </article>
         </div>
       </section>
+
+      <section class="section compact" aria-labelledby="feed-title">
+        <div class="section-heading">
+          <p class="eyebrow">Noticeboard record shape</p>
+          <h2 id="feed-title">A transport record can become reusable data.</h2>
+          <p>This is the kind of record a venue screen, event page, phone QR code or community noticeboard could read once operator data becomes available.</p>
+        </div>
+        <div class="notice-demo">
+          <pre><code>transport_notice:
+  event_id: straddie-market-example
+  location: Point Lookout Bowls Club
+  event_date: 2026-06-20
+  source_checked_at: 2026-05-11 13:45 AEST
+  operators:
+    - name: SeaLink vehicle ferry
+      timetable_url: https://www.sealink.com.au/north-stradbroke-island/ferry-information/timetable/
+      next_departures: []
+      scheduled_vessel:
+      passenger_capacity:
+      estimated_passengers:
+      vehicle_capacity:
+      status:
+    - name: Stradbroke Island Buses
+      route:
+      next_service:
+      passenger_capacity:
+      estimated_passengers:
+      accessibility_note:
+      service_alert_url:
+    - name: Taxi or private transfer
+      provider:
+      booking_required:
+      seats_available:
+      pickup_window:
+  disruption_checks:
+    ferry_status_checked:
+    bus_status_checked:
+    flyer_status_checked:
+    weather_checked:
+    cancellation_cutoff:
+  backup_options:
+    taxi_contact:
+    private_transfer_contact:
+    venue_wait_area:
+    overnight_advice:
+  visitor_advice:
+    recommended_arrival_window:
+    last_return_path:
+    disruption_message:
+    reviewed_by:</code></pre>
+          <div class="panel">
+            <p class="eyebrow">Public display</p>
+            <h3>Clear enough for a visitor, structured enough for a system.</h3>
+            <p>The public wording can stay simple: current timetable, route, next boat, next bus, whether booking is needed, what changed, and the safest return options. The same record also creates learning data for the next market.</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="sequence-nav" aria-label="Previous and next pages">
+        <a class="sequence-link previous" href="mapper.html">
+          <span class="sequence-kicker">Previous</span>
+          <span>Onboarding</span>
+        </a>
+        <a class="sequence-link next" href="noticeboard.html">
+          <span class="sequence-kicker">Next</span>
+          <span>Noticeboard</span>
+        </a>
+      </nav>
     </main>
     <footer class="site-footer">
       <div class="footer-copy">
-        <p>Transport planning should reduce pressure and support host-led events.</p>
-        <p class="footer-note">Current timetables must be checked directly with operators before publication.</p>
+        <p>Transport data makes market notices more useful.</p>
+        <p class="footer-note">Use operator pages for live decisions until a reviewed transport feed exists.</p>
       </div>
     </footer>
     <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
-    <script src="data/market-data.js"></script>
+    <script src="data/market-data.js?v=20260522-events"></script>
     <script src="app.js"></script>
   </body>
 </html>
-
